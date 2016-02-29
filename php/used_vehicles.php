@@ -34,11 +34,14 @@
 
     <header>
     <div class="row">
+      <div class="col-md-1 hidden-sm hidden-xs">
+
+      </div>
       <div class="col-md-4">
           <img src="../images/west_coast_auto_logo.png" alt="logo" class="logo img-responsive">
       </div>  
 
-      <div class="col-md-4 hidden-sm hidden-xs">
+      <div class="col-md-3 hidden-sm hidden-xs">
 
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
@@ -68,8 +71,8 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav ">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="specials.html">Specials</a></li>
@@ -89,12 +92,12 @@
 
 <div class="row">
   <div class="col-xs-1"></div>
-  <div class="col-xs-11">
+  <div class="col-xs-10">
     <article class="inner-main-content">
       <h1>USED VEHICLES</h1>
 
 
-      <div class='well'>
+      <div class='well well_bg'>
         <div class='row'>
 
           <?php
@@ -108,11 +111,12 @@
 
             while ($row = mysqli_fetch_assoc($result)) {
 
-                echo "<div class='col-xs-6 col-md-3 car_image_box' style='margin-top: 50px'>";
-                  echo "<img src='../images/car_" . $row['stock_no'] . ".jpg' alt='logo' class='img_used_car img-responsive'>";
+              echo "<div class='col-xs-12 col-md-6 shadow'>";
+                echo "<div class='col-xs-6 col-md-6 car_image_box' style='padding: 50px 1%'>";
+                  echo "<img src='../images/car_" . $row['stock_no'] . ".png' alt='logo' class='img_used_car img-responsive'>";
                 echo "</div>";
 
-                echo "<div class='col-xs-6 col-md-3 ' style='margin-top: 50px'>";
+                echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
                   echo "<h4>Stock No: <small>" . $row['stock_no'] . "</small></h4>";
                   echo "<h4>Availability: <small>" . $row['availability'] . "</small></h4>";
                   echo "<h4>Manufacturer: <small>" . $row['manufacturer_id'] . "</small></h4>";
@@ -129,7 +133,7 @@
                   echo "<h4>Transmission: <small>" . $row['transmission'] . "</small></h4>";
                   echo "<h4>Specials: <small>" . $row['specials'] . "</small></h4>";
                 echo "</div>";
-            
+              echo "</div>";
             }
 
           ?>
