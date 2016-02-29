@@ -1,0 +1,106 @@
+
+
+
+/* WCA colours
+    light green:  #66ce2d
+    dark green: #3eae00
+    grey:  #575757
+    black:  #2D2D2D
+*/
+div{
+	min-height: 50px;
+}
+
+
+body {
+	/*background-color: green;*/
+	background: rgba(102, 206, 45, .1);
+}
+ header {
+ 	clear: both;
+ }
+
+.logo {
+	margin-left:  auto;
+	margin-right: auto;
+	max-height: 200px;
+}
+
+
+
+.login-btn {
+	float: right;
+	margin-right: 5%;
+	margin-left: 2%;
+}
+.logout_btn {
+	margin-left: 3%;
+	font-size: 8pt;
+}
+.adm_opt{
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.staff_btns{
+	width: 10% !important;
+	min-width: 60px;
+	min-height: 44px!important;
+	margin-right: 1%;
+	font-size: 8pt;
+	word-break: normal;
+	white-space: normal;
+}
+/*a {word-break: break-all;
+white-space: normal;}
+*/
+
+.contact-info {
+	margin-top: 24px;
+	font-size: 20px;
+}
+
+
+
+
+
+
+/* main content area */
+
+.specail-font-size{
+font-size: 30px;
+
+}
+
+.inner-main-content {
+	min-height: 500px;
+}
+.img_used_car {
+	margin-left:  auto;
+	margin-right: auto;
+	width: 100%;
+	/*min-width: 150px;*/
+	/*max-width: 300px;*/
+}
+
+.car_image_box {
+	height: 457px;
+}
+
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+
+/* main content area */
+footer.navbar {
+	margin-bottom: 0;
+	background-color: green;
+}
+
+footer.navbar p {
+	text-align:  center;
+	line-height: 50px;
+	
+}

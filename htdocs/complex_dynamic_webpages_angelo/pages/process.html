@@ -1,0 +1,442 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+	<title>AllStyles Homes</title>
+	<link href="../css/allstylehomes.css" rel="stylesheet" type="text/css">
+	<link href="../css/media_queries.css" rel="stylesheet" type="text/css">
+    
+    <!-- The following, links to JS, to enable the functionality --> 
+    <script src="../js/ddmenu.js"></script>
+    
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
+
+
+<!-- The following javascript is used to configure 'tabbed text-box' lower in this page. -->
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#tabs div').hide();
+	$('#tabs div:first').show();
+	$('#tabs .row1 li:first').addClass('active');
+	$('#tabs ul li a').click(function(){ 
+	$('#tabs ul li').removeClass('active');
+	$(this).parent().addClass('active'); 
+	var currentTab = $(this).attr('href'); 
+	$('#tabs div').hide();
+	$(currentTab).show();
+	return false;
+	});
+	});
+</script>
+
+
+</head>
+
+	<!-- =========================================== -->
+
+<body>
+
+	<!--[if lt IE 8 ]>
+  <p>Your browser is out of date please upgrade your browser to view this site</p>
+  <a href="http://windows.microsoft.com/en-US/internet-explorer/download-ie"> Download new browser here</a>
+<![endif]-->
+
+        
+
+
+    <!-- ================================================= -->
+   
+   
+   <header id="my_head">
+	  
+		<div class="headerSpinnerMon">
+			<img src="../images/logo/logo_390x140.png" alt="Company logo which will rotate for 3 times and then stay still"  class="spinner img_logo"/>
+		</div>
+ 	 
+     
+		<div class="head_address">
+			<span class="t_black">AllStyle <span class="t_tan">Homes</span></span><br>
+			<p class="righthead">255 Serenity Drive<br>
+			Bundaberg QLD 4670 <br>
+			Ph: 07 4153 9876<br>
+            email: admin@ash.com.au</p>
+		</div>
+  
+ 
+  <!-- ================================================= -->
+ 	  
+  				 
+    
+		<div id="leftHeaderSpinnerMobile">
+			<img src="images/logo/logo_mobile.png" alt="Company logo which will rotate for 3 times and then stay still"  class="spinner img_logo_mobile"/>
+		</div>
+        
+        
+  <!-- ================================================= -->
+
+		<nav>
+            <!--<div id="logo">Demo Page</div>-->
+            <label for="drop" class="toggle">Menu</label>
+            
+            <input type="checkbox" id="drop" />
+            
+            <ul class="menu">
+            
+              	<li><a href="../index.html" class="top-heading" >Home</a></li>
+              
+              	<li><a href="about.html" class="top-heading">About</a></li>
+              
+              	<li> 
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">Designs +</label>
+                    <a href="designs.html" class="top-heading" >Designs</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="barclay.html">The Barclay</a></li>
+                        <li><a href="jannsen.html">The Jannsen</a></li>
+                        <li><a href="novelli.html">The Novelli</a></li>
+                        <li><a href="preston.html">The Preston</a></li>
+                        <li><a href="ridgely.html">The Ridgely</a></li>
+                        <li><a href="sienna.html">The Sienna</a></li>
+                    </ul>
+              	</li>
+          
+                
+                <li><a href="process.html" class="top-heading">Process</a></li>
+                <li><a href="faq.html" class="top-heading">FAQ</a></li>
+                <li><a href="testimonials.html" class="top-heading">Testimonials</a></li>
+                <li><a href="contact.php" class="top-heading">Contacts</a></li>
+            </ul>
+       	</nav>
+
+</header>
+
+<!-- =================================================== -->
+
+  
+  <article id="main">
+      
+    <!-- The DIV below sets a return point for the "Back To Top" button at the bottom of the page.  -->
+      	<div id="page_top"></div>
+
+
+    <div class="marquee">
+			<p class="lg_marquee">Our Process To Success</p>
+			<p class="sm_marquee">Your tick of approval is our guarantee</p>
+	</div>
+        
+    
+    <div id="slideshow1">
+ <script>
+var i = 0;
+var path = new Array();
+ 
+// LIST OF IMAGES
+path[0] = "../images/process/slide_1_init_meet.png";
+path[1] = "../images/process/slide_2_prelim_plans.png";
+path[2] = "../images/process/slide_3_int_fix_decor.png";
+path[3] = "../images/process/slide_4_final_design.png";
+path[4] = "../images/process/slide_5_final_costs.png";
+path[5] = "../images/process/slide_6_contract_blueprints.png";
+path[6] = "../images/process/slide_7_build_permits.png";
+path[7] = "../images/process/slide_8_site_prep.png";
+path[8] = "../images/process/slide_9_foundations.png";
+path[9] = "../images/process/slide_10_frames_trusses.png";
+path[10] = "../images/process/slide_11_lock_up.png";
+path[11] = "../images/process/slide_12_fixtures and finishes.png";
+path[12] = "../images/process/slide_13_walk_thru.png";
+path[13] = "../images/process/slide_14_handover.png";
+path[14] = "../images/process/slide_15_warranty_inspection.png";
+
+
+function swapImage()
+{
+   document.slide.src = path[i];
+   if(i < path.length - 1) i++; else i = 0;
+   setTimeout("swapImage()",3000);
+}
+window.onload=swapImage;
+</script>
+
+<img src="../images/mantra.png"  class="slideholder" id="slide" alt="This is a slideshow displaying the different stages of the building process.">
+</div>
+
+    
+    
+    
+    <br/>
+  	<p><span class="statement">This page outlines the 12 stages that make up the AllStyle Homes Building Process that will turn your dream into reality.</span> </p>
+    
+
+
+<div id="container">
+  <div id="tabs">
+
+
+    <ul class="row1">
+      <li><a href="#tab-1">Stage 1</a></li>
+      <li><a href="#tab-2">Stage 2</a></li>
+      <li><a href="#tab-3">Stage 3</a></li>
+      <li><a href="#tab-4">Stage 4</a></li>
+      <li><a href="#tab-5">Stage 5</a></li>
+      <li><a href="#tab-6">Stage 6</a></li>
+      
+    </ul>
+    <ul class="row2">
+    	<li><a href="#tab-7">Stage 7</a></li>
+        <li><a href="#tab-8">Stage 8</a></li>
+        <li><a href="#tab-9">Stage 9</a></li>
+        <li><a href="#tab-10">Stage 10</a></li>
+        <li><a href="#tab-11">Stage 11</a></li>
+        <li><a href="#tab-12">Stage 12</a></li>
+    </ul>
+
+    <div id="tab-1">
+      <p><span class="clbold">STAGE 1: The Initial Meeting: </span> If you already own property, it would be advantageous to bring along any or all of the following documents to this first meeting</p>
+  <p class="indents">
+	&bull; location (street address, GPS),<br>
+	&bull; surveyor reports,<br>
+	&bull; elevation certificate,<br>
+	&bull; orientation (sun rising/setting),<br>
+	&bull; prevailing wind/weather direction,<br>
+	&bull; geology and soil testing reports,<br>
+	&bull; land governances, and<br>
+	&bull; council restrictions/stipulations.
+  </p>
+        <p>Note: If any or all of this information is not provided, additional research and applications may need to be undertaken before further planning can commence.</p>
+        <p>Even before the first meeting, try to have spent some time considering what you are looking for. Jot down your thoughts as to the following:</p>
+  <p class="indents">
+	&bull; number of bedrooms, baths, family rooms<br>
+	&bull; entertainment areas<br>
+	&bull; flooring (timber, tile, vinyl, carpets)<br>
+	&bull; ceilings (flat, raked)<br>
+	&bull; “open living” or traditional<br>
+	&bull; “must haves” and "wish list" for your home<br>
+	&bull; sample designs, from books or magazines<br>
+	&bull; identify designs from our online selection
+  </p>
+        <p>All of these aspects and more will be discussed and we consider all the options. Our goal is that by the end of the first meeting, the client will have settled on a specific design (or at least narrowed down the list). If not, a second meeting can easily be arranged.</p>
+        <p>We will review all aspects of your new home and establish your budget. We can refer you to a financing entity if you do not already have one.</p>
+    </div>
+    
+    
+    <div id="tab-2">
+      <p><span class="clbold">STAGE 2: Preliminary Plans and Interior Design: </span> By this stage, the client should have decided if they want a custom built home ("from scratch", original floor plans) or a style from our range of existing floor plans. At this stage the final concept (from the last stage) is reviewed, and:</p><br>
+        <p><span class="bo">If you are building a custom home: </span> The pricing scheme will be discussed – each house has a “Standard Design” cost with base features. The client can then add “options” at additional costs. You will then meet with the designer to start preliminary plans. A deposit for the drawing of the plans must be made. Upon our entering a contract, the deposit is deducted from the cost of your contract. During this stage we work closely with the designer to make sure your home design offers the latest in innovation & energy efficiency, fits your needs and desires, and can be built within your established budget.</p><br/>
+        <p><span class="bo">If you are building one of our floor plans: </span> The plans will be discussed. If you want to accept the design exactly as is there will not be any cost for the plans. If you wish to modify the design or add "options" at additional cost, then a deposite will be required for the re-drawing of the plans.</p>
+       <p>Interior Design encompasses aesthetic appeal and functionality. For clients choosing both custom homes or existing styles, we offer a range of options, within the areas of landscaping, floor coverings, wall coverings, cabinets, countertops & built-ins, as well as security and technology systems.
+        </p>
+        <p>“Options” allow the client to have the maximum freedom of choice while being made aware how their (additional) cost impacts on the final cost. </p>
+
+    </div>
+    
+    
+    <div id="tab-3">
+      <p><span class="clbold">STAGE 3:  Final Design Phase and Costing: </span>During this phase, your home design is refined and completed. Other activities during this phase include meetings scheduled for you to select colours & finish items with the interior designer, visit the cabinetmaker to select & finalize your cabinet package, and select appliances in the appliance suppliers' showroom; as well as to meet with any other vendor or subcontractor requiring coordination.</p>
+            
+        <p>Once your plans have been finalised, AllStyle Homes will then provide you with a quotation.  The quote will outline the cost of building your dream home based on your design incorporating all of your ideas, wants and needs. But don't worry, changes can still be made. We want you to be "OK" with all your choices</p>
+
+    </div>
+    
+    
+    <div id="tab-4">
+      <p><span class="clbold">STAGE 4: Contract Execution and Building Permits: </span>At this all decisions, including colours, cabinets, appliances, and flooring should be made, your final pricing is completed, and your financing is in place.</p>
+        <p>A Building Contract will then be prepared, with a commencement date set.  Upon signing of the contract the warranty insurance can be applied for.  A deposit is then payable on the return of the warranty insurance.  AllStyle Homes will arrange for the completion of a soil test, site survey and plans will be Energy Rated.</p>
+        <p>Working drawings will be completed showing ‘site plan’, floor plan, external elevations, electrical layout, joinery details and landscape/concrete/fencing details as required.</p>
+        <p>Once the contract is signed and the warranty insurance received a Building permit will be applied for, to the Local Council Authority.  ‘Proof of ownership’ of land is needed by way of title showing our name, rates notice or confirmation letter from conveyance/solicitor with volume and folio numbers.  As well as letter of finance. </p>
+
+    </div>
+    
+    
+     <div id="tab-5">
+      <p><span class="clbold">STAGE 5: Site Preparation: </span>Planning is complete and the construction process is now ready to begin. In this stage, the focus is on preparing the site and there's quite a bit that may need to be done before construction starts to make sure that your house will be built on firm ground, that it's built in the right place, that it'll resist pests and that it's being built in the right spot. The tasks that need to be done on a building site in preparation  may include: </p>
+ <p class="indents">
+	&bull; the removal/relocation of trees, stump,<br>
+	&bull; "cutting and filling" to level the site,<br>
+	&bull; erection of retaining walls,<br>
+	&bull; connecting water, electricity &amp; sewerage,<br>
+	&bull; chemical termite barriers,<br>
+	&bull; soil testing and geotechnical reports,<br>
+	&bull; land surveying
+</p>
+    </div>
+    
+     <div id="tab-6">
+      <p><span class="clbold">STAGE 6: Foundations: </span>All footings and underground plumbing/electrical are dug to specifications, steel reinforcement laid before the pouring of the concrete. Some clients like to be present to cast a memento into the concrete.</p><br/>
+      
+      <p> Foundation is necessary to support the building and the loads that are within or on the building. The combination of footing and foundation distributes the load on the bearing surface and keeps the building level and plumb and reduces settling to a minimum. When properly designed, there should be little or no cracking in the foundation and no water leaks. </p><br/>
+      
+      <p>Foundations may be divided into several categories which are suitable for specific situations. Curtain walls are also continuous in nature but being installed in a trench in the soil. Curtain walls are strong, relatively watertight and give good protection against rodents and other vermin.</p><br/>
+      
+      <p>Pier foundations are often used to support the timber frames of light buildings with no suspended floors.  The size of the piers is often given by the weight required to resist wind uplift of the whole building.</p><br/>
+      
+      <p>Pad and pole foundation consists of small concrete pads poured in the bottom of holes which support pressure treated poles. The poles are long enough to extend and support the roof structure. 
+
+A floating slab or raft foundation consists of a poured concrete floor in which the outer edges are thickened to 20 to 30cm and reinforced.</p><br/>
+      
+      <p>A pier and ground level beam foundation is commonly used where extensive filling has been necessary and the foundation would have to be very deep in order to reach undisturbed soil. </p><br/>
+      
+      <p>Piles are long columns that are driven into soft ground where they support their load by friction with the soil rather than by a firm layer at their lower end. </p>
+    </div>
+
+     <div id="tab-7">
+      <p><span class="clbold">STAGE 7: Framing: </span>External and internal wall frames, roof trusses are complete.  In addition:</p>  
+   <p class="indents">
+	&bull; Roughing In - fitting cables &amp; pipes through ceiling and walls cavities,<br>
+	&bull; Plumbing - hot/cold water throughout,<br>
+	&bull; Plumbing Gas - meter to appliance outlet,<br>
+	&bull; Electrical - cable &amp; backing plates,<br>
+	&bull; Wrap - Sealants and thermal insulation
+</p>       
+       	<p>You may want to be present at the jobsite for this phase, when we schedule a jobsite meeting and together we thoroughly inspect the home prior to the wall linings being installed. Specific items we will be inspecting include not only general overall conformance to the plans and design, but specifically the plumbing, electrical, HVAC, and technology installations to allow for easy modifications you may desire before drywall is installed.</p>
+    </div>
+    
+     <div id="tab-8">
+      <p><span class="clbold">STAGE 8: "Lock-up" Stage: </span>Ask any builder or tradie - the theft of fixtures and appliances from construction sites happens far more often than you might realise. Sometimes thieves will see the fresh cardboard boxes that the oven or the light fittings came in sitting in the skip outside the site and put two and two together. Thieves are even known to get in and pinch the cabling in the walls of new homes because of the skyrocketing value of the copper they contain.</p><br/>
+
+<p>For insurance purposes, as a basic rule appliances aren’t usually covered under the builder’s insurance unless they’re hard-wired in, and nothing’s covered at all under your own contents insurance until the handover stage.</p><br/>
+
+<p>The sooner the house can be securely locked up, the sooner work can really start on the interior fit out.</p><br/>
+
+<p>The lockup stage is is also the point at which the second agreed payment is also made to AllStyle Homes. This lockup payment’s typically a pretty significant percentage of the overall fee so as to assist us in purchasing interior/exterior fittings and fixtures.</p>
+
+<p>Generally speaking, lockup normally means that the following elements are in place:
+<span class="indents">
+	&bull; doors,<br>
+	&bull; windows and skylights,<br>
+	&bull; building wrap / wall wrap,<br>
+	&bull; external walls / cladding / brickwork,<br>
+	&bull; fascia boards and soffit boards
+</span>
+</p>
+    </div>
+    
+     <div id="tab-9">
+      <p><span class="clbold">STAGE 9: Fixtures and Fittings: </span>All the time you spent with us planning how the inside of your home would look like, has paid off. By the end of this stage, our highly skilled staff and subcontractors have turned the empty shell from the "lock-up" stage to a vibrant, comfortable, livable space.</p><br/>
+      
+      <p>All internal linings, architraves, skirting, doors, built in shelving and kitchen, bathroom/ensuite cabinets are fitted and fixed into position. All the finishing touches, tiling, painting, electrical and plumbing fit off are completed in accordance with the contract documents.</p><br/>
+      
+      <p> Its amazing to watch the transformation take place. All those little decisions you had to make like what style doorknobs and hinges to the larger decision like choosing between a bathtub or spa; all thse element come together. And nothing is ever forgotten!! Berfore we move to the next stage, we are confident that everything fits the way it should, works the way it should and looks the way it should. </p>
+   
+    </div>
+    
+     <div id="tab-10">
+      <p><span class="clbold">STAGE 10: Walk-through Inspection: </span>At the conclusion of construction and before you move in, we schedule a jobsite meeting and conduct a walk-through. During this meeting, we run through a checklist and inspect your entire home room by room and ensure your home is move-in ready.</p>
+        <p>You will then meet with Alex and Sheree for a full handover/inspection inspection where they will explain the house to you and ensure that everything is as per your contract specification.</p>
+        <p>At the conclusion of this inspection, we confirm your move-in date, finalize any financial transactions and completion documents, then any punch-list items generated from the walk-thru are coordinated with the subs to be completed prior to your move-in date.</p>
+
+    </div>
+    
+     <div id="tab-11">
+      <p><span class="clbold">STAGE 11: Handover/Move-In: </span>Your home is finished, all last minute items are complete, the local building department has issued the certificate of occupancy, your homeowners insurance policy is in place and the lender has made their final inspection and disbursement. Closing papers are signed and the keys are now yours. All that is left is for you to move in. Congratulations on your new home!</p>
+      
+      
+      <p>By the time you’re ready for the final handover stage, you should have already: </p>
+<p class="indents">
+	&bull; had a building surveyor in to do an  inspection,<br>
+	&bull; had issued a certificate of occupancy,<br>
+	&bull; done a thorough pre-handover inspection,<br>
+	&bull; hired an independent building inspector,<br>
+	&bull; had rectified, any faults or issues which were identified
+    </p>
+
+<p>On handover day you’ll receive:</p>
+<p class="indents">
+	&bull; your occupancy permitfrom a building surveyor,<br>
+	&bull; warranty and instruction documentation for appliances,<br>
+	&bull; any other documentation from service providers
+    </p>
+<p>And this is also the time when final payment is handed to us, usually in the form of a bank cheque or fund transfer. It is now "signed, sealed and delivered"; you have taken ownership. This house is now your home... enjoy, with the complements of AllStyle Homes.</p>
+    </div>
+    
+     <div id="tab-12">
+      <p><span class="clbold">STAGE 12: First Year Warranty Inspection : </span>According to the Queensland Building and Construction Commission, on "20 June 2014, the Queensland Building and Construction Board made the Rectification of Building Work Policy.</p><br/>
+
+<p>For you, this means that if your building contractor has carried out defective building work they should be required to rectify that work irrespective of whether they did or did not comply with the contracted plans and specifications for your work.</p><br/>
+
+<p>As part of our commitment to you to honour our obligations, as the first year anniversary approaches , we will organise to conduct a comprehensive (and documented) walk-through inspection. And it is truly comprehensive – from the foundations to the roof; every tile; every nail; every fitting; every fixture; front door to backdoor. If it is deemed that any defect or imperfection is a result from our construction methods we will rectify the problem at our expense.</p>
+    </div>
+
+    
+  </div>	<!-- Closed the "tabs" DIV -->
+</div>	<!-- Closed the "container" DIV -->
+
+
+<br><br><br><br> 
+<a href="#page_top" >Back to Top <img src="../images/up_arrow.png" alt="Up arrow symbol" width="20" height="25" /></a>
+ 
+ <br />
+
+
+
+  </article>	<!-- Closes the "main" article-->
+  
+  	
+  
+  	 <!-- =========================================== -->
+
+  <footer>
+
+<h5>   We value the support of the following companies: </h5>
+
+<a href="http://www.bluescopesteel.com.au/" target="_blank"><img src="../images/logo/bluescope_logo_2.png" alt="Blue Scope Steel logo" class="in_line"/>
+</a>
+    
+    <a href="http://www.parksidegroup.com.au/" target="_blank"><img src="../images/logo/parksidegroupe_logo.png" alt="Parkside Group logo" class="in_line"/>
+    </a>
+  	
+    <a href="http://hewittelectrical.com.au/" target="_blank"><img src="../images/logo/neil_hewitt_elec&air_logo.png" alt="Neil Hewitt Elec & Air logo" class="in_line"/>
+    </a>
+  	
+    <a href="http://www.ridgewayroof.com.au/" target="_blank"><img src="../images/logo/ridgeway_logo.png" alt="Ridgeway Roofing Supplies logo." class="in_line"/>
+    </a>
+    
+    <a href="../www.metrotiles.com.au" target="_blank"><img src="../images/logo/metrotiles_logo.jpg" alt="Metrotiles logo." class="in_line"/>
+    </a>
+    
+    <a href="http://www.cwp.com.au/" target="_blank"><img src="../images/logo/wholesalepaintgroup_logo.png" alt="wholesale paint group logo" class="in_line"/>
+  	</a>
+    
+    <a href="../www.bunnings.com.au" target="_blank"><img src="../images/logo/bunnings.png" alt="Bunnings Warehouse logo." class="in_line"/>
+    </a>
+   
+        
+    <a href="http://www.timstewartarchitects.com.au/" target="_blank"><img src="../images/logo/tim_stewart_architect_logo.png" alt="Tim Stewart Architects logo" class="in_line"/>
+    </a>
+    
+    <a href="http://www.rams.com.au/" target="_blank"><img src="../images/logo/rams_logo2.png" alt="RAMS Home Loans logo" class="in_line"/>
+    </a>
+    
+    <a href="https://www.aussie.com.au/" target="_blank"><img src="../images/logo/aussie.png" alt="Aussie Home Loans logo" class="in_line"/>
+    </a>    
+    
+    
+    <a href="https://www.qbcc.qld.gov.au/" target="_blank"><img src="../images/logo/qbcc_logo.png" alt="Qld Building and Construction Commission logo" class="in_line"/>
+    </a>
+    <a href="http://www.masterbuilders.asn.au/" target="_blank"><img src="../images/logo/master_builders_qld_logo.png" alt="Master Builders Queensland" class="in_line"/>
+    </a>
+    <a href="https://www.cbussuper.com.au" target="_blank"><img src="../images/logo/cbus_ais_logo.png" alt="cbus – an industry superfund logo" class="in_line"/>
+    </a>
+    
+    <br><br><br>
+    
+  	<!-- =========================================== -->
+    <div class="abobe_link">
+    <a href="http://get.adobe.com/reader/"><img src="../images/getadobereader_button_158x39.png" alt="Get Adobe Reader." style="float:right;">Adobe Reader (free)</a> or other software must be installed on this computer to view documents marked &quot;(PDF).&quot;
+    </div><br><br><br><br> 
+    
+    <a href="documents/terms_and_conditions.pdf" target="_blank" class="class2">Terms and Conditions</a> |
+        <a href="documents/privacy_statement.pdf" target="_blank" class="class2">Privacy Statement</a> |
+		<a href="sitemap.html" class="class2">Sitemap</a> |
+        <span class="statement">&copy; 2015 AllStyle Homes</span>
+
+</footer> <!-- Closes the "footer" -->
+
+  	<!-- =========================================== -->
+  
+
+</body>
+</html>

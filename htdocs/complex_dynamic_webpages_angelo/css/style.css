@@ -1,0 +1,17 @@
+body{
+width: 100%;
+height:800px;
+/*
+background: rgb(26, 52, 229);
+background: -moz-linear-gradient(58deg, rgb(26, 52, 229) 30%, rgb(109, 82, 250) 68%);
+background: -webkit-linear-gradient(58deg, rgb(26, 52, 229) 30%, rgb(109, 82, 250) 68%);
+background: -o-linear-gradient(58deg, rgb(26, 52, 229) 30%, rgb(109, 82, 250) 68%);
+background: -ms-linear-gradient(58deg, rgb(26, 52, 229) 30%, rgb(109, 82, 250) 68%);
+background: linear-gradient(148deg, rgb(26, 52, 229) 30%, rgb(109, 82, 250) 68%);
+*/
+}
+form {
+	/*display: flex;*/
+	text-align:  center;
+
+}

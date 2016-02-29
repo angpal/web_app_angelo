@@ -1,0 +1,3451 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@media (min-width: 481px) and (max-width: 801px){
+
+/*
+>>>>  TABLE OF CONTENT  <<<<
+
+1. General Layout - All Pages
+	1.1 General Layout/Structure 
+	1.2 General text/fonts and images
+	1.3 Footer links
+	1.4 Animated (Rotating) Logo (appears on index page only 
+	1.5 Toggling DATE & TIME
+	1.6 Animated Marque (Sliding)
+	1.7 Drop-Down Menu (Navigation Bar)
+2. About Page
+	2.1 Backgrounds Specific to TIME-OF-DAY
+3. Design Page 
+	3.1 JQuery toggle text boxes 
+	3.2 Pop-up Thumb-nails
+	3.3 Individual house layout
+	3.4 "Exploded" views of architectural drawings
+4. Process Page
+	4.1 Slideshow
+	4.2 Tabbed textbox
+5 Contact Page
+	5.1 Contact details layout
+	5.2 Social Media Links
+	5.3 SUBMITING EMAIL details + Login
+	5.4 GoogleMaps
+6. SiteMap Page\
+
+*/
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+			1. GENERAL LAYOUT
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* ==========================================================
+	1.1 This section configures the general layout of the majority of the pages 
+=========================================================== */
+
+body {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	font-family: Verdana, Arial, helvetica;
+	background-color: #f6f6f6;
+	-webkit-box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+	-moz-box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+	box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+}
+
+#my_head {
+	width: 100%;
+	height: 200px;
+	display: inline-block;
+	background-color: #f6f6f6;
+}
+
+
+.headerSpinnerMon{
+	display: none;
+	width: 32%;
+	height: 150px;
+	display: inline-block;
+	background-color: #f6f6f6;
+	margin: 5px 2% 5px 15%;
+	/*padding: 0;
+	z-index: 5;*/
+}
+
+.head_address {
+	width: 30%;
+	height: 145px;
+	margin: 0 5% 0px 1%;
+	display: inline-block;
+	background-color: #f6f6f6;
+}
+
+
+
+#leftHeaderSpinnerTab{
+	width: 32%;
+	height: 140px;
+	float: left;
+	background-color: #f6f6f6;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	padding: 0;
+}
+#leftHeaderSpinnerMobile{
+	display:none;
+	width: 30%;
+	height: 140px;
+	float: left;
+	background-color: #f6f6f6;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	padding: 0;
+}
+
+
+
+#main {
+	width: 96%;
+	height: auto;
+	background-color: #f6f6f6;
+	float: left;
+	margin: 0;
+	padding: 2px 2% 2px 2%;
+	/*overflow-y: scroll;
+	overflow-x: no-display;*/
+}
+
+footer {
+	width: 96%;
+	height: auto;
+	display: inline-block;
+	background-color: #f6f6f6;
+	font-size:10px;
+	margin: 0;
+	padding: 2px 2% 2px 2%;
+	text-align: center;
+}
+
+.abobe_link {
+	width: 90%;
+	float: right;
+}
+
+/* ==================================================
+	1.2 This section configures all general texts/fonts and images thoughout the site
+=====================================================*/
+	
+p {
+	text-align: left;
+	font-size: 11pt;
+	font-family:Verdana, Arial, helvetica, san serif;
+	color: #000000;
+}
+.h1 {
+	text-align: left;
+	font-size: 18pt;
+	font-weight: 700;
+	text-decoration: underline;
+	letter-spacing: -2px;
+	color: #b40c00;
+}
+.h2 {
+	text-align: left;
+	font-size: 16pt;
+	font-weight: 600;
+	color: #b40c00;
+}
+
+.h3 {
+	text-align: left;
+	font-size: 12pt;
+	font-weight: 600;
+	color: #e86600;
+}
+.h4 {
+	font-size: 8pt;
+}
+.h5 {
+	text-align: left;
+	font-size: 14pt;
+	font-weight: 600;
+	color: #000000;
+}
+.c2 {
+	text-align: center;
+}
+
+p.questions {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+	font-style: italic;
+	/*text-indent: 50px;*/
+}
+.faqquestions {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+	font-style: italic;
+	color: #e86600;
+}
+.statement {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: 500;
+	font-style: italic;
+	padding-left: 20px;
+	padding-right: 20px;
+	text-align: justify;
+}
+.txtindent {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: 500;
+	padding-left: 20px;
+	text-align: justify;
+}
+p.cl {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: 500;
+	color: #e86600;
+}
+.clbold {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: 600;
+	color: #e86600;
+}
+.bo {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: 700;
+}
+
+
+
+/* Formats heading (as per logo) in side bar*/
+.t_black {						/* DYNAMIC */
+	color: #000000;
+	font-size:20px;
+}
+.t_tan {						/* DYNAMIC */
+	color: #b40c00;
+	font-size: 22px;
+}
+
+.righthead {
+	font-size: 14px;
+}
+
+
+
+
+/* Indents and justifies unordered-list for Value Statements */
+
+ul.our_processes {
+	font-size: 11pt;
+}
+
+ul.valu_ullist {
+	color: #b40c00;
+	margin-left: 40px;
+	margin-bottom: 30px;
+	list-style-position: outside;
+	text-align: justify;
+}
+li.valu_lilist{
+    margin-top: 7px;
+	margin-right: 20px;
+	font-size: 14px;
+	font-style: italic;
+}
+
+/* Positions images - left & right justified - in main */
+.img_left {
+	float: left;
+	width: 32%;
+	height: auto;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.img_right {
+	float: right;
+	width: 32%;
+	height: auto;
+	margin-left: 10px;
+}
+
+
+
+
+
+/* ========================================================
+	1.4 This section configures the ANIMATED LOGO on index page 
+========================================================= */
+
+.img_logo {
+	width: 110%;
+	height: 140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.img_logo_mobile {
+	display: none;
+	width: 75%;
+	height: 99%;
+	margin-right: 5%;
+	padding-left: 10%;
+}
+  #stage {
+    margin: 1em auto;
+    -webkit-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+  }
+  
+  .spinner {
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 6s;
+
+	animation-name: spinner;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-duration: 6s;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .spinner:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+
+
+
+/* WebKit and Opera browsers */
+  @-webkit-keyframes spinner {
+    from { -webkit-transform: rotateY(0deg); 
+		transform: rotateY(0deg);   }
+    to   { -webkit-transform: rotateY(-360deg);
+		transform: rotateY(-360deg); }
+  }
+
+  /* all other browsers */
+  @keyframes spinner {
+    from {
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+    to {
+      -webkit-transform: rotateY(-360deg);
+              transform: rotateY(-360deg);
+    }
+  }
+
+
+
+
+
+
+/* ==============================================
+ 	1.6 This section is for the ANIMATES MARQUE throughout all page   
+====================================================  */
+.marquee {
+	width: 96%;
+	height: 100px;
+	margin: 5px 2%;
+	overflow: hidden;
+	position: relative;
+	/* border: 1px solid #000;
+	background-color: green;
+  	*/
+    text-shadow: 0px 2px 2px  rgba(0, 0, 0, .5), 0px 1px 0px  rgba(250, 250, 250, .2);
+	-webkit-transition: background-color 350ms;
+    transition: background-color 350ms;
+}
+
+.marquee p.lg_marquee {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	line-height: 50px;
+
+	text-align: left;
+	font-size: 30px;
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: #b40c00;
+
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+	transform:translateX(100%);
+	-webkit-transition: width 2s, height 2s, -webkit-transform 4s; /* Safari */
+    -webkit-transition:-webkit-transform 4s;
+    transition:-webkit-transform 4s;
+    transition: transform 4s;
+    transition: transform 4s, -webkit-transform 4s;
+}
+
+.marquee p.sm_marquee {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	line-height: 140px;
+
+	text-align: right;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: #b40c00;
+	
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+	transform:translateX(100%);
+}
+.marquee p:nth-child(1) {
+	animation: left-one 8s ease 1 ;
+	-moz-animation: left-one 8s ease 1;
+	-webkit-animation: left-one 8s ease 1;
+}
+.marquee p:nth-child(2) {
+	animation: left-two 8s ease 1;
+	-moz-animation: left-two 8s ease 1;
+	-webkit-animation: left-two 8s ease 1;
+}
+
+.marquee p:nth-child(1) { /* IE 9 */
+ -webkit-transform: translate(0); /* Safari */
+ transform: translate(0);
+}
+.marquee p:nth-child(2) { /* IE 9 */
+ -webkit-transform: translate(0); /* Safari */
+ transform: translate(0);
+}
+
+
+/*---------- Move the Marquee to the Left ----------------*/
+
+@keyframes left-one {
+    0% 	{        -webkit-transform:translateX(0);        transform:translateX(0);    	}
+    50% {        -webkit-transform:translateX(0);        transform:translateX(0);    	}
+	60% {        -webkit-transform:translateX(-100%);        transform:translateX(-100%);   }
+	90% {        -webkit-transform:translateX(-100%);        transform:translateX(-100%);   }
+    100%{        -webkit-transform:translateX(0);        transform:translateX(0);   	}
+}
+@keyframes left-two {
+    0% {        -webkit-transform:translateX(100%);        transform:translateX(100%);    	}
+    50% {        -webkit-transform:translateX(100%);        transform:translateX(100%) 	}
+    60% {        -webkit-transform:translateX(0);        transform:translateX(0);       }
+    100%{        -webkit-transform:translateX(0);        transform:translateX(0);    }
+}
+
+/** Mozilla Firefox Keyframes **/
+
+/** Webkit Keyframes **/
+@-webkit-keyframes left-one {
+    0%  {        -webkit-transform:translateX(0);   transform:translateX(0); }
+    50% {        -webkit-transform:translateX(0);  transform:translateX(0); 	 }
+	60% {        -webkit-transform:translateX(-100%); transform:translateX(-100%);   }
+	90% {        -webkit-transform:translateX(-100%);  transform:translateX(-100%);  }
+    100%{        -webkit-transform:translateX(0);   	transform:translateX(0);}
+}
+@-webkit-keyframes left-two {
+    0% {        -webkit-transform:translateX(100%); transform:translateX(100%);   }
+    50% {        -webkit-transform:translateX(100%);  transform:translateX(100%); }
+    60% {        -webkit-transform:translateX(0);    transform:translateX(0);  }
+    100%{        -webkit-transform:translateX(0);  transform:translateX(0); }
+}
+
+
+
+
+	
+	
+/* ========================================================
+ 	1.7 This section is for the Drop-Down Menu (Navigation Bar) in all page   
+========================================================= */
+ 
+
+nav { 
+  width: 100%;
+  margin: 0;
+  height: 30px;
+  font-size: 18px;
+}
+
+.top-heading{
+	height: 15px;
+	line-height: 15px;
+}
+
+.toggle + a,
+ .menu { display: none; height: 20px;}
+
+.toggle {
+  display: block;
+  background-color: #b40c00;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: none;
+  border: none;
+}
+
+.toggle:hover { background-color: #000000; }
+
+[id^=drop]:checked + ul { 
+  display: block;
+  top: -1px;
+  z-index: 20;
+
+ }
+nav ul {
+  float: right;
+  width: 50%;
+  padding: 0;
+  margin: -5px 0;
+  list-style: none;
+  position: relative;
+  top: 20px;
+}
+
+nav ul li {
+  display: block;
+  width:52%;
+  padding: 2% 0 2% 0;
+ 
+}
+
+nav ul ul .toggle,
+ nav ul ul a { padding: 0 40px; line-height: 30px;}
+
+nav ul ul ul a { padding: 0 80px; }
+
+nav a:hover,
+ nav ul ul ul a { background-color: #000000; }
+
+nav ul li ul li .toggle,
+ nav ul ul a { background-color: #212121; }
+
+nav ul ul {
+  float: none;
+  position: static;
+  color: #ffffff;
+    z-index: 200;
+}
+
+nav ul ul li:hover > ul,
+nav ul li:hover > ul { display: none; }
+
+nav ul ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul ul li { position: static;
+
+}
+
+ 
+ 
+ 
+ 
+ 
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					 3. DESIGN PAGE 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* ====================================================
+ 	3.1 This section is for the JQuery toggle text boxes   
+=================================================== */
+
+.main-content-area{
+	background-color:#f6f6f6;
+	/*min-height: 200px;*/
+	width:96%;
+	/*position: relative;*/
+	margin: 0 2% 1% 2%;
+
+}
+#mansion {
+	width: 94%;
+	height: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	display:inline-block;
+	background-image: url("../images/designs/great_house.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color:#eae9d4;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:.9em;
+	text-align: center;
+	color: #495a62;
+	border: 20px solid #eae9d4;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.b1 {
+	font-size:18px;
+}
+
+.tbox1 {
+	width: 40%;
+	position: absolute;
+	top: 25%;
+	left: 44%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:1em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.tbox2 {
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	left: 44%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:1em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.tbox3 {
+	width: 30%;
+	position: absolute;
+	top: 69%;
+	left: 5%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:1em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+
+ 
+/* ====================================================
+ 	3.2 This section is for the pop-up enlarged views of the thumb-nails in the "designs" page   
+ =================================================== */
+
+#design_thumbs {
+	width: 70%;
+	/*height: auto;*/
+	display:inline-block;
+	
+}
+
+ul.enlarge{
+	width: 70%;
+	list-style-type:none; /*remove the bullet point*/
+	display:inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 2%;
+	
+}
+ul.enlarge li{
+	display:inline-block; /*places the images in a line*/
+	width: 35%;
+	font-size: 11px;
+	text-align: center;
+	
+	z-index: 0; /*resets the stack order of the list items - later we'll increase this*/
+	margin:10px 3% 1px -5%; /*margin:10px 40px 0 20px;*/
+}	
+
+ul.enlarge img.sm {
+	display:inline-block;
+	width: 75%;
+	height: auto;
+}
+ul.enlarge img.lg {
+	display:inline-block;
+	width: 95%;
+	height: auto;
+}
+ul.enlarge span {
+		position:absolute;
+		width: 215%;
+		left: -9999px;
+		background-color:#eae9d4;
+		padding: 10px;
+		font-family: 'Droid Sans', sans-serif;
+		font-size:.9em;
+		text-align: center;
+		color: #495a62;
+		box-shadow: 0 0 20px rgba(0,0,0, .75);
+		border-radius:8px;
+    }
+
+ul.enlarge li:hover span{
+		top: -130%; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+		left: -3%; /*distance from the left of the thumbnail to the left of the popup image*/
+}
+
+ul.enlarge li:hover:nth-child(2) span{
+	left: -109.5%;
+}
+ul.enlarge li:hover:nth-child(3) span{
+	top: -235%;
+	left: -3%;
+}
+ul.enlarge li:hover:nth-child(4) span{
+	top: -235%;
+	left: -109.5%;
+}
+ul.enlarge li:hover:nth-child(5) span{
+	top: -340%;
+	left: -3%;
+}
+ul.enlarge li:hover:nth-child(6) span{
+	top: -340%;
+	left: -109.5%;
+}
+
+/**Below, see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version
+ul.enlarge img, ul.enlarge span{
+	behavior: url(pie/PIE.htc);
+}
+**/
+
+.img_popup {
+	width: 60%;
+	height: auto;
+}
+
+enlarge.popup_sm {
+	width: 60%;
+	height: auto;
+}
+
+
+
+
+/* ==============================================
+	2.2 This section configures the various divs on the individual house design pages 
+================================================ */
+
+#plan {
+	width: 40%;
+	float: left;
+	margin-right: 5px;
+	margin-top: -25px;
+	margin-left: 50px;
+}
+
+#dimensions {
+	width: 40%;
+	font-size: 90%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 8%;
+	float:left;
+	/*float: right;*/
+}
+ul.dimentions {
+	list-style-type:none; /*remove the bullet point*/
+	margin-left:-20px;
+	text-align:left;
+	/*padding-left: 22px;
+	padding-right: 2px;*/
+    }
+
+#features {
+	width: 45%;
+	font-size: 90%;
+	padding-left: 10px;
+	float: left;
+	clear:both;
+}
+
+#inclusions {
+	width: 45%;
+	font-size: 90%;
+	padding-left: 10px;
+	float: right;
+}
+
+
+
+
+/* ===================================================
+	2.3The following section is applied to the "exploded" views of architectual drawings on each individual desin page 
+====================================================== */
+
+ul.exploded{
+		list-style-type:none; /*remove the bullet point*/
+		margin-left:0;
+    }
+    ul.exploded li{
+		display:inline-block; /*places the images in a line*/
+		font-size: 11px;
+		text-align: center;
+		position: relative;
+		z-index: 0; /*resets the stack order of the list items - later we'll increase this*/
+    	margin:20px 25px 2px -25px; /*margin:10px 40px 0 20px;*/
+    }
+    ul.exploded img{
+		background-color:#eae9d4;
+		padding: 6px;
+		box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+		border-radius: 4px;
+    }
+	
+	ul.exploded img.sm {
+		display:inline-block;
+		width: 131px;
+		height: auto;
+	}
+	ul.exploded img.lg {
+		display:inline-block;
+		width: 520px;
+		height: auto;
+	}
+	
+    ul.exploded span{
+		position:absolute;
+		left: -9999px;
+		background-color:#eae9d4;
+		padding: 10px;
+		font-family: 'Droid Sans', sans-serif;
+		font-size:.9em;
+		text-align: center;
+		color: #495a62;
+		box-shadow: 0 0 20px rgba(0,0,0, .75);
+		border-radius:8px;
+    }
+    ul.exploded li:hover{
+		z-index: 50;
+		cursor:pointer;
+    }
+    ul.exploded span img{
+		padding:2px;
+		background:#ccc;
+    }
+    ul.exploded li:hover span{
+		top: -250px; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+		left: -4px; /*distance from the left of the thumbnail to the left of the popup image*/
+    }
+    
+    /**Below, see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version*
+    ul.enlarge img, ul.enlarge span{
+    	behavior: url(pie/PIE.htc);
+    }
+*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+					3. Process Page 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+/* ===================================================
+	3.1 The following section is applied to the Slideshow on the Process page 
+====================================================== */
+
+		/* NOTE: Same as the desktop resolution */
+
+		
+/* ===================================================
+	3.2 The following section is applied to the Tabbed-Textbox on the Process page 
+====================================================== */		
+
+
+#container {
+	max-height: 500px;
+}
+
+#tabs {
+	width: 100%;
+	height: 480px;
+	margin: 20px 0;
+	background: #e9e5dc;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+	box-shadow: 0 0 6px #333;
+	-moz-border-radius:7px;
+    -webkit-border-radius:7px;
+	border-radius:7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+#tab-1, #tab-2, #tab-3, #tab-4, #tab-5, #tab-6, #tab-7, #tab-8, #tab-9, #tab-10, #tab-11, #tab-12 {
+	min-height: 290px;
+	max-height: 290px;
+	padding-top: 5px;
+	overflow-y: scroll;
+	overflow-x: no-display;
+	border-top:solid;
+	border-width: 3px;
+	border-color: #000;
+	font-size: 11pt;
+
+}
+#tabs ul {
+	float: left;
+	background: #e9e5dc;
+	width: 98%;
+	padding-top: 4px;
+	text-align:center;
+	list-style-type: none;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	            -ms-grid-row-align:center;
+	        align-items:center;
+}
+#tabs li {
+	margin-left: 1.5%;
+	list-style: none;
+	display:inline-block;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e9e5dc;
+	width: 14%;
+}
+* html #tabs li {
+	display: inline;
+}
+#tabs li, #tabs li a {
+	float: left;
+	
+}
+#tabs ul li.active {
+	height: 26%;
+	border-top:3px #b40c00 solid;
+	background-color: #eee;
+	box-shadow: 0 0 6px #000;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#tabs ul li.active a {
+	color: #b40c00;
+}
+#tabs div {
+	background-color:#e9e5dc;
+	clear: both;
+	padding: 15px;
+	min-height: 200px;
+}
+#tabs div h3 {
+	margin-bottom: 12px;
+}
+#tabs div p {
+	line-height: 150%;
+	font-size: 11pt;
+}
+#tabs div p.indents{
+	line-height: 150%;
+	font-size: 11pt;
+	margin-left: 10%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+#tabs ul li a {
+	text-decoration: none;
+	padding: 5px;
+	color: #000;
+	font-weight: bold;
+	font-size: 95%;
+
+}
+
+
+.line_gap {
+	line-height: 12px;
+}
+.row1 {
+	width: 100%;
+	height: auto;
+	min-height: 8%;
+	padding-left: 1%;
+	padding-right: 1%;
+	-moz-border-radius:7px;
+    -webkit-border-radius:7px;
+	border-radius:7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.row2 {
+	width: 100%;
+	height: auto;
+	min-height: 8%;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+
+
+/* >>>>>>>>>>>>>> 5. Contact Page <<<<<<<<<<<<<<<<< */
+
+
+/* ================================================== 
+	5.1 This section is for the structure of the contact page    
+===================================================== */
+
+#contact-page {							/* DYNAMIC */
+    background-color:#e9e5dc;
+    width: 92%;
+	padding: 5px 1% 40px 3%;
+	margin: 19px 2% 20px 2%;
+
+    border: 3px #e86600;
+	border-top-style: solid ;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#cFHead{
+	width: 100%;
+			display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+#contact-page img.lrg {
+	display: inline-block;
+	margin: 29px 20px 20px 29px;
+	width: 50%;
+	height: auto;
+	border-style: solid; /* IE 9 */
+    -webkit-transform: skew(11deg, 5deg); /* Safari */
+    transform: skew(11deg, 5deg); /* Standard syntax */
+}
+
+#contact-page h1 {
+    font-size:30px;
+}
+
+.contact_page_h2 {
+    margin-bottom:11px;
+    font-style:italic;
+    font-weight:normal;
+}
+
+
+
+
+/* ====================================================
+ 	5.3 This section is for the social media bar/buttons in the contact page   
+=================================================== */
+
+
+p > a:hover {
+  color: #d9d9d9;
+  text-decoration: underline;
+}
+
+
+._12 {
+  font-size: 1.0em;
+}
+
+._14 {
+  font-size: 1.4em;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.fr-social-icons {
+  width: 35%;
+  height: 80px;
+  margin: 0 auto;
+  padding-left: 10px;
+  display: block;
+  background-color:#e9e5dc;
+}
+
+.social-icon {
+  color: #fff;
+}
+
+ul.social-icons {
+  margin-top: 0;
+}
+
+li img{
+	width: 12%;
+	margin-left: 0.5%;
+}
+
+li img:hover{
+	box-shadow: 2px 2px 7px #b40c00;
+}
+
+.social-icons li {
+  vertical-align: top;
+  display: inline;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  padding: 10px 14px 7px 14px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-twitter {
+  padding: 10px 10px 7px 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-twitter:hover {
+  background-color: #00aced;
+  box-shadow: 2px 2px 2px #b40c00;
+}
+
+.fa-rss {
+  padding: 10px 12px 7px 12px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-rss:hover {
+  background-color: #eb8231;
+}
+
+.fa-youtube {
+  padding: 10px 12px 7px 11px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-youtube:hover {
+  background-color: #e64a41;
+}
+
+.fa-linkedin {
+  padding: 10px 11px 8px 11px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-linkedin:hover {
+  background-color: #0073a4;
+  box-shadow: 2px 2px 2px #b40c00;
+}
+
+.fa-google-plus {
+  padding: 10px 10px 7px 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-google-plus:hover {
+  background-color: #e25714;
+}
+
+
+
+
+
+/* ================================================== 
+	5.4 This section is for the SUBMITING EMAIL details + Login   
+===================================================== */
+
+#email_container{
+	width: 88%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+form {
+	width: 100%;
+	min-height: 160px;
+}
+
+.e_title {
+	width: 17%;
+	height: 28px;
+	padding: 14px 2% 10px 2%;
+	font-size:14px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 0;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.e_title_input {
+	width: 70%;
+	height: 29px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 0;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+.txtbox {
+	margin: 0 2%;
+}
+
+.btn_submit {
+	width: 80px;
+	height: 50px;
+	padding: 4px 2%;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	border: 1px #187E20;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #187E20;
+    -webkit-box-shadow: inset 0 0 10px #187E20;
+    box-shadow:         inset 0 0 10px #187E20;
+}
+
+.btn_submit:hover {
+	background-color: #FFFFFF;
+	border: 1px #1D5622;
+	-moz-border-radius:14px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	box-shadow: 0 0 20px #1B513C;
+}
+
+.btn_adminLogin {
+	float: right;
+	width: 60px;
+	height: 40px;
+	padding: 2% 3%;
+	font-size: 14px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #b40c00 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #b40c00;
+    -webkit-box-shadow: inset 0 0 10px #b40c00;
+    box-shadow:         inset 0 0 10px #b40c00;
+}
+
+
+.login_header {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login_container{
+	width: 89.6%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+	/*
+	border-top-style: solid ;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;*/
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+.login_title {
+	width: 17%;
+	height: 40px;
+	padding: 19px 2% 10px 2%;
+	font-size:18px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 0;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.login_title_input {
+	width: 74%;
+	height: 33px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size:18px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 0;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.body_DB {
+	height: auto;
+}
+
+#database_container{
+	width: 88%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+	/*
+	border-top-style: solid ;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;*/
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+
+
+.database_table {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border-radius: 15px;
+  /*border: 1px solid #167F92;*/
+  border: 1px solid #b40c00;
+}
+.database_table tr {
+  /*border: 1px solid #D9E4E6;*/
+  border: 1px solid #b40c00;
+}
+.database_table tr:nth-child(odd) {
+  background-color: #fef1f0;
+}
+.database_table th {
+  display: none;
+  border: 1px solid #FFF;
+  /*border-radius: 15px;
+  background-color: #167F92;*/
+  background-color: #b40c00;
+  color: #FFF;
+  padding: 1em;
+}
+
+/*
+#b40c00
+fef1f0
+fefbfb
+*/
+
+.database_table th:first-child {
+  display: table-cell;
+  text-align: center;
+  /*border-radius: 15px;*/
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0;
+
+}
+.database_table th:nth-child(2) {
+  display: table-cell;
+  text-align: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 15px;
+
+}
+.database_table th:nth-child(2) span {
+  display: none;
+}
+/*  .database_table th:nth-child(2):after {
+  content: attr(data-th);
+}  */
+/*
+@media (min-width: 480px) {
+  .database_table th:nth-child(2) span {
+    display: block;
+  }
+  .database_table th:nth-child(2):after {
+    display: none;
+  }
+}*/
+.database_table td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 90%
+}
+.database_table td:first-child {
+  display: table-cell;
+  text-align: center;
+  /*border-right: 1px solid #D9E4E6;*/
+  border-right: 1px solid #f8c7c3;
+}
+
+/*
+@media (min-width: 480px) {
+  .database_table td {
+    /*border: 1px solid #D9E4E6;
+	border: 1px solid #f8c7c3;
+  }
+}*/
+.database_table th, .database_table td {
+  text-align: center;
+  margin: .5em 1em;
+}
+/*
+@media (min-width: 480px) {
+  .database_table th, .database_table td {
+    display: table-cell;
+    padding: 1em;
+  }
+}
+*/
+.del_title {
+	width: 17%;
+	height: 40px;
+	padding: 19px 2% 10px 2%;
+	font-size:18px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 0;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.del_title_input {
+	width: 74%;
+	height: 33px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size:18px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 0;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.btn_admin_del {
+	float: right;
+	width: 126px;
+	height: 46px;
+	padding: 1% 3%;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #b40c00 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #b40c00;
+    -webkit-box-shadow: inset 0 0 10px #b40c00;
+    box-shadow:         inset 0 0 10px #b40c00;
+}
+
+.btn_admin_logout {
+	float: right;
+	width: 85px;
+	height: 22px;
+	padding: 20px 20px;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #e86600 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.btn_admin_BTAR {
+	float: left;
+	width: 140px;
+	height: 45px;
+	padding: 1% 3%;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px green solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px green;
+    -webkit-box-shadow: inset 0 0 10px green;
+    box-shadow:         inset 0 0 10px green;
+}
+
+
+#sent_container {
+	width: 75%;
+	min-height: 300px;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 4%;
+	/*
+	border-top-style: solid ;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;*/
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+
+/* ================================================== 
+	5.3 This section is for displaying CONTACT DETAILS   
+===================================================== */
+
+.contact_details {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	margin: 2% 0 1% 2.5%;
+	/*border: 1px blue solid;*/
+}
+#our_details {
+	width: 95%;
+	height: 350px;
+	/*border: 1px red solid;*/
+	padding: 10px 2%;
+	margin-bottom: 12px;
+	display: inline-block;
+}
+.cont_icons {
+	width: 3%;
+	height: auto;
+	padding: 0 1%;
+	display: inline-block;
+	line-height: 1.4;
+}
+.cont_details {
+	width: 40%;
+	height: auto;
+	padding-left: 3%;
+	line-height: 1.5;
+	display: inline-block;
+}
+.hours {
+	width: 38%;
+	position: relative;
+	top: -118px;
+	margin-top: -55px;
+	height: auto;
+	padding-left:5%;
+	display: inline-block;
+}
+
+
+
+ /* ====================================================
+ 	4.3 This section formats the GoogleMap feature in the "contact" page   
+=================================================== */
+ 
+ .gmap {
+	border-style: solid;
+	border-width: 10px;
+	border-color: #000000;
+}
+
+/* CSS for the GoogleMaps button */
+#gmap_canvas {
+	width: 88%;
+	height:400px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 5%;
+	float:left;
+	margin: -20px 10px 10px 10px;
+	z-index: 5;
+	overflow:hidden;
+	border: 3px #e86600;
+	border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+ 
+}
+
+
+
+
+
+
+
+@media (max-width: 480px){
+	
+/*  
+>>>>  TABLE OF CONTENT  <<<<
+
+1. General Layout - All Pages
+	1.1 General Layout/Structure 
+	1.2 General text/fonts and images
+	1.3 Footer links
+	1.4 Animated (Rotating) Logo (appears on index page only 
+	1.5 Toggling DATE & TIME
+	1.6 Animated Marque (Sliding)
+	1.7 Drop-Down Menu (Navigation Bar)
+2. About Page
+	2.1 Backgrounds Specific to TIME-OF-DAY
+3. Design Page 
+	3.1 JQuery toggle text boxes 
+	3.2 Pop-up Thumb-nails
+	3.3 Individual house layout
+	3.4 "Exploded" views of architectural drawings
+4. Process Page
+	4.1 Slideshow
+	4.2 Tabbed textbox
+5 Contact Page
+	5.1 Contact details layout
+	5.2 Social Media Links
+	5.3 SUBMITING EMAIL details + Login
+	5.4 GoogleMaps
+6. SiteMap Page\
+
+*/
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+			1. GENERAL LAYOUT
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* ==========================================================
+	1.1 This section configures the general layout of the majority of the pages 
+=========================================================== */
+
+#my_head {
+	width: 100%;
+	height: 200px;
+	display: inline-block;
+	background-color: #f6f6f6;
+}
+
+
+.headerSpinnerMon{
+	display: none;
+	width: 32%;
+	height: 100px;
+	display: inline-block;
+	background-color: #f6f6f6;
+	margin: -10px 2% 5px 15%;
+}
+
+.head_address {
+	width: 38%;
+	height: 105px;
+	margin: -50px 5% 0 1%;
+	display: inline-block;
+	background-color: #f6f6f6;
+}
+
+
+#leftHeaderSpinnerTab{
+	display:none;
+	width: 32%;
+	height: 140px;
+	float: left;
+	background-color: #f6f6f6;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	padding: 0;
+}
+#leftHeaderSpinnerMobile{
+	width: 30%;
+	height: 140px;
+	float: left;
+	background-color: #f6f6f6;
+	margin-right: 4px;
+	margin-bottom: 8px;
+	padding: 0;
+}
+
+
+#main {
+	width: 96%;
+	height: auto;
+	background-color: #f6f6f6;
+	float: left;
+	margin: 0;
+	padding: 2px 2% 2px 2%;
+}
+
+footer {
+	width: 96%;
+	height: auto;
+	display: inline-block;
+	background-color: #f6f6f6;
+	font-size:10px;
+	margin: 0;
+	padding: 2px 2% 2px 2%;;
+	text-align: center;
+}
+
+.abobe_link {
+	width: 100%;
+	float: right;
+}	
+
+.adobe_link.img {
+	width: 118px;
+	height: 35px;
+}
+
+/* ==================================================
+	1.2 This section configures all general texts/fonts and images thoughout the site
+=====================================================*/
+
+/* Positions images - left & right justified - in main */
+.img_left {
+	float: left;
+	width: 28%;
+	height: auto;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.img_right {
+	float: right;
+	width: 28%;
+	height: auto;
+	margin-left: 5px;
+}
+
+.marquee {
+	height:20px;
+}
+/* Formats text/fonts */
+p {
+	text-align: left;
+	font-size: 10pt;
+	font-family:Verdana, Arial, helvetica, san serif;
+	color: #000000;
+}
+.h1 {
+	text-align: left;
+	font-size: 16pt;
+	font-weight: 800;
+	text-decoration: underline;
+	letter-spacing: -2px;
+	color: #b40c00;
+}
+.h2 {
+	text-align: left;
+	font-size: 14pt;
+	font-weight: 700;
+	color: #b40c00;
+}
+
+.h3 {
+	text-align: left;
+	font-size: 10pt;
+	font-weight: 600;
+	color: #e86600;
+}
+.h4 {
+	font-size: 7pt;
+}
+.h5 {
+	text-align: left;
+	font-size: 12pt;
+	font-weight: 500;
+	color: #000000;
+}
+.c2 {
+	text-align: center;
+}
+
+p.questions {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	font-style: italic;
+	/*text-indent: 50px;*/
+}
+.faqquestions {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	font-style: italic;
+	color: #e86600;
+}
+.statement {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: 400;
+	font-style: italic;
+	padding-left: 15px;
+	padding-right: 30px;
+	text-align: justify;
+}
+.txtindent {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: 400;
+	padding-left: 15px;
+	text-align: justify;
+}
+p.cl {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: 400;
+	color: #e86600;
+}
+.clbold {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: 500;
+	color: #e86600;
+}
+.bo {
+	font-family: Verdana, Arial, helvetica, sans-serif;
+	font-size: 10pt;
+	font-weight: 600;
+}
+
+
+
+/* Formats heading (as per logo) in side bar*/
+.t_black {						/* DYNAMIC */
+	color: #000000;
+	font-size:15px;
+	font-weight: 600;
+}
+.t_tan {						/* DYNAMIC */
+	color: #b40c00;
+	font-size: 15px;
+	font-weight: 600;
+	
+}
+
+.righthead {
+	font-size: 12px;
+}
+
+
+
+/* Indents and justifies unordered-list for Value Statements */
+
+ul.our_processes {
+	font-size: 10pt;
+}
+
+
+ul.valu_ullist {
+	color: #b40c00;
+	margin-left: 25px;
+	margin-bottom: 25px;
+	list-style-position: outside;
+	text-align: justify;
+}
+li.valu_lilist{
+    margin-top: 4px;
+	margin-right: 15px;
+	font-size: 12px;
+}
+
+
+
+/* ==============================================
+	1.4 This section configures the Back-To-The-Top Button 
+================================================ */
+
+
+
+
+/* ======================================================
+	1.5 This section configures the ANIMATED LOGO on index page 
+====================================================== */
+
+.img_logo_mobile {
+	display: none;
+	width: 55%;
+	height: 99%;
+	margin-right: 5%;
+	padding-left: 10%;
+}
+.img_logo {
+	display: inline-block;
+	width: 110%;
+	height: 140px;
+	margin-left: auto;
+	margin-right: auto;
+}
+ #stage {
+    margin: 1em auto;
+    -webkit-perspective: 1200px;
+    -ms-perspective: 1200px;
+    perspective: 1200px;
+  }
+  
+  .spinner {
+    -webkit-animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 6s;
+	animation-name: spinner;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-duration: 6s;
+
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+
+  .spinner:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  
+
+/* WebKit and Opera browsers */
+  @-webkit-keyframes spinner{
+    from{-webkit-transform:rotateY(0deg);transform:rotateY(0deg);}
+    to{-webkit-transform:rotateY(-360deg);transform:rotateY(-360deg);}
+  }
+
+  /* all other browsers */
+  @keyframes spinner{
+    from{
+      -webkit-transform:rotateY(0deg);
+              transform:rotateY(0deg);
+    }to{
+      -webkit-transform: rotateY(-360deg);
+              transform: rotateY(-360deg);
+    }
+  }
+/* ==============================================
+ 	1.6 This section is for the ANIMATES MARQUE throughout all page   
+====================================================  */
+.marquee {
+	width: 96%;
+	height: 62px;
+	margin: 5px 2%;
+	overflow: hidden;
+	position: relative;
+    text-shadow: 0px 2px 2px  rgba(0, 0, 0, .5), 0px 1px 0px  rgba(250, 250, 250, .2);
+	-webkit-transition: background-color 350ms;
+    transition: background-color 350ms;
+}
+
+.marquee p.lg_marquee {
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	line-height: 50px;
+
+	text-align: left;
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: #b40c00;
+
+	transform:translateX(100%);
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+	-webkit-transition: width 2s, height 2s, -webkit-transform 4s; /* Safari */
+    -webkit-transition:-webkit-transform 4s;
+    transition:-webkit-transform 4s;
+    transition:transform 4s;
+    transition: transform 4s, -webkit-transform 4s;
+}
+
+.marquee p.sm_marquee {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	margin: 0;
+	line-height: 100px;
+
+	text-align: right;
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: -2px;
+	color: #b40c00;
+
+	-moz-transform:translateX(100%);
+	-webkit-transform:translateX(100%);
+	transform:translateX(100%);
+}
+.marquee p:nth-child(1) {
+	animation: left-one 8s ease 1 ;
+	-moz-animation: left-one 8s ease 1;
+	-webkit-animation: left-one 8s ease 1;
+}
+.marquee p:nth-child(2) {
+	animation: left-two 8s ease 1;
+	-moz-animation: left-two 8s ease 1;
+	-webkit-animation: left-two 8s ease 1;
+}
+
+.marquee p:nth-child(1) { /* IE 9 */
+ -webkit-transform: translate(0); /* Safari */
+ transform: translate(0);
+}
+.marquee p:nth-child(2) { /* IE 9 */
+ -webkit-transform: translate(0); /* Safari */
+ transform: translate(0);
+}
+
+
+/*--------------- Move the Marquee to the Left ------------*/
+@keyframes left-one {
+    0% 	{        -webkit-transform:translateX(0);        transform:translateX(0);    	}
+    50% {        -webkit-transform:translateX(0);        transform:translateX(0);    	}
+	60% {        -webkit-transform:translateX(-100%);        transform:translateX(-100%);   }
+	90% {        -webkit-transform:translateX(-100%);        transform:translateX(-100%);   }
+    100%{        -webkit-transform:translateX(0);        transform:translateX(0);   	}
+}
+@keyframes left-two {
+    0% {        -webkit-transform:translateX(100%);        transform:translateX(100%);    	}
+    50% {        -webkit-transform:translateX(100%);        transform:translateX(100%) 	}
+    60% {        -webkit-transform:translateX(0);        transform:translateX(0);       }
+    100%{        -webkit-transform:translateX(0);        transform:translateX(0);    }
+}
+
+/** Mozilla Firefox Keyframes **/
+
+/** Webkit Keyframes **/
+@-webkit-keyframes left-one {
+    0%  {        -webkit-transform:translateX(0); transform:translateX(0);   }
+    50% {        -webkit-transform:translateX(0);   transform:translateX(0);	 }
+	60% {        -webkit-transform:translateX(-100%);  transform:translateX(-100%);  }
+	90% {        -webkit-transform:translateX(-100%);   transform:translateX(-100%); }
+    100%{        -webkit-transform:translateX(0);   transform:translateX(0);	}
+}
+@-webkit-keyframes left-two {
+    0% {        -webkit-transform:translateX(100%);   transform:translateX(100%); }
+    50% {        -webkit-transform:translateX(100%);  transform:translateX(100%); }
+    60% {        -webkit-transform:translateX(0);    transform:translateX(0);  }
+    100%{        -webkit-transform:translateX(0);  transform:translateX(0); }
+}
+
+
+
+
+/* ==============================================
+ 	1.7 This section is for the Drop-Down Menu (Navigation Bar) in all page   
+====================================================  */
+ 
+
+nav { 
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  font-size: 18px;
+}
+.top-heading{
+	height: 20px;
+	line-height: 20px;
+}
+
+.toggle + a,
+ .menu { display: none; height: 20px;}
+
+.toggle {
+  display: block;
+  background-color: #b40c00;
+  padding: 0 20px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 50px;
+  text-decoration: none;
+  border: none;
+}
+
+.toggle:hover { background-color: #000000; }
+
+[id^=drop]:checked + ul { 
+  display: block;
+  top: -6px;
+  z-index: 20;
+
+ }
+nav ul {
+  float: left;
+  width: 80%;
+  padding: 0;
+  margin: 5px 0;
+  list-style: none;
+  position: relative;
+}
+nav ul li {
+  display: block;
+  width: 80%;
+  padding: 3% 0 3% 10%;
+ 
+}
+
+nav ul ul .toggle,
+ nav ul ul a { padding: 0 40px; }
+
+nav ul ul ul a { padding: 0 80px; }
+
+nav a:hover,
+ nav ul ul ul a { background-color: #000000; }
+
+nav ul li ul li .toggle,
+ nav ul ul a { background-color: #212121; }
+
+nav ul ul {
+  float: none;
+  position: static;
+  color: #ffffff;
+    z-index: 200;
+}
+
+nav ul ul li:hover > ul,
+nav ul li:hover > ul { display: none; }
+
+nav ul ul li {
+  display: block;
+  width: 100%;
+}
+
+nav ul ul ul li { position: static;
+
+}
+
+
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					 3. DESIGN PAGE 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* ====================================================
+ 	3.1 This section is for the JQuery toggle text boxes   
+=================================================== */
+
+.main-content-area{
+	background-color:#f6f6f6;
+	/*min-height: 200px;*/
+	width:96%;
+	position: relative;
+	margin: 0 2% 1% 2%;
+
+}
+#mansion {
+	width: 90%;
+	height: 220px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	display:inline-block;
+	background-image: url("../images/designs/great_house.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color:#eae9d4;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:.9em;
+	text-align: center;
+	color: #495a62;
+	border: 20px solid #eae9d4;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.b1 {
+	font-size:18px;
+}
+
+.tbox1 {
+	width: 40%;
+	position: absolute;
+	top:19%;
+	left: 42%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:.9em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.tbox2 {
+	width: 45%;
+	position: absolute;
+	top: 45%;
+	left: 40%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:.9em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+.tbox3 {
+	width: 39%;
+	position: absolute;
+	top: 65%;
+	left: 5%;
+	cursor: pointer;
+	background-color:#f6f6f6;
+	padding: 10px;
+	font-family: 'Droid Sans', sans-serif;
+	font-size:.9em;
+	text-align: center;
+	color: #495a62;
+	border: 2px solid red;
+	box-shadow: 0 0 20px rgba(0,0,0, .75);
+	border-radius:8px;
+}
+
+
+ 
+/* ====================================================
+ 	3.2 This section is for the pop-up enlarged views of the thumb-nails in the "designs" page   
+ =================================================== */
+
+#design_thumbs {
+	width: 95%;
+	/*height: auto;*/
+	margin-right: auto;
+	margin-left: auto;
+}
+
+ul.enlarge{
+	list-style-type:none; /*remove the bullet point*/
+	
+	padding-left: 2%;
+	width: 55%;
+}
+ul.enlarge li{
+	display:inline-block; /*places the images in a line*/
+	width: 45%;
+	font-size: 11px;
+	text-align: center;
+	position: relative;
+	z-index: 0; /*resets the stack order of the list items - later we'll increase this*/
+	margin:10px 4% 2px -15%; /*margin:10px 40px 0 20px;*/
+
+}	
+
+ul.enlarge img.sm {
+		display:inline-block;
+		width: 55%;
+		height: auto;
+}
+ul.enlarge img.lg {
+	display:inline-block;
+	width: 95%;
+	height: auto;
+}
+ul.enlarge span {
+		position:absolute;
+		width: 215%;
+		left: -9999px;
+		background-color:#eae9d4;
+		padding: 10px;
+		font-family: 'Droid Sans', sans-serif;
+		font-size:.9em;
+		text-align: center;
+		color: #495a62;
+		box-shadow: 0 0 20px rgba(0,0,0, .75);
+		border-radius:8px;
+    }
+
+ul.enlarge li:hover span{
+		top: -150%; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+		left: -5.5%; /*distance from the left of the thumbnail to the left of the popup image*/
+}
+
+ul.enlarge li:hover:nth-child(2) span{
+	left: -113%;
+}
+ul.enlarge li:hover:nth-child(3) span{
+	top: -262%;
+	left: -5.5%;
+}
+ul.enlarge li:hover:nth-child(4) span{
+	top: -262%;
+	left: -113%;
+}
+ul.enlarge li:hover:nth-child(5) span{
+	top: -371%;
+	left: -5.5%;
+}
+ul.enlarge li:hover:nth-child(6) span{
+	top: -371%;
+	left: -113%;
+}
+
+
+/* ==============================================
+	2.3 This section configures the various divs on the individual house design pages
+================================================ */
+
+
+#plan {
+	width: 75%;
+	height: auto;
+	/*float: left;*/
+	margin-left: 14%;
+	margin-top: -25px
+}
+
+#dimensions {
+	width: 60%;
+	font-size: 90%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float:left;
+	margin-left: 20%;
+}
+ul.dimentions {
+	list-style-type:none; /*remove the bullet point*/
+	margin-left:-20px;
+	text-align:left;
+	margin-left: 5%;
+    }
+
+
+#features {
+	width: 80%;
+	height: auto;
+	padding-left: 0px;
+	margin-left: 22%;
+	float: left;
+	clear:left;
+	font-size: 14px;
+}
+#inclusions {
+	width: 100%;
+	height: auto;
+	padding-left: 0px;
+	margin-left: 22%;
+	float: left;
+	clear:left;
+	font-size: 14px;
+}
+
+
+/* ===================================================
+	2.4 The following section is applied to the "exploded" views of architectual drawings on each individual desin page 
+====================================================== */
+
+ul.exploded{
+		list-style-type:none; /*remove the bullet point*/
+		margin-left:0;
+    }
+    ul.exploded li{
+		display:inline-block; /*places the images in a line*/
+		font-size: 11px;
+		text-align: center;
+		position: relative;
+		z-index: 0; /*resets the stack order of the list items - later we'll increase this*/
+    	margin:20px 25px 2px -25px; /*margin:10px 40px 0 20px;*/
+    }
+    ul.exploded img{
+		background-color:#eae9d4;
+		padding: 6px;
+		box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+		border-radius: 4px;
+    }
+	
+	ul.exploded img.sm {
+		display:inline-block;
+		width: 131px;
+		height: auto;
+	}
+	ul.exploded img.lg {
+		display:inline-block;
+		width: 380px;
+		height: auto;
+	}
+	
+    ul.exploded span{
+		position:absolute;
+		left: -9999px;
+		background-color:#eae9d4;
+		padding: 10px;
+		font-family: 'Droid Sans', sans-serif;
+		font-size:.9em;
+		text-align: center;
+		color: #495a62;
+		box-shadow: 0 0 20px rgba(0,0,0, .75);
+		border-radius:8px;
+    }
+    ul.exploded li:hover{
+		z-index: 50;
+		cursor:pointer;
+    }
+    ul.exploded span img{
+		padding:2px;
+		background:#ccc;
+    }
+    ul.exploded li:hover span{
+		top: -250px; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+		left: -4px; /*distance from the left of the thumbnail to the left of the popup image*/
+    }
+    
+    /** Below, see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version*
+    ul.enlarge img, ul.enlarge span{
+    	behavior: url(pie/PIE.htc);
+    }
+*/
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+					3. Process Page 
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+/* ===================================================
+	3.1 The following section is applied to the Slideshow on the Process page 
+====================================================== */
+
+		/* NOTE: Same as the desktop resolution */
+
+
+
+
+/* ===================================================
+	3.2 The following section is applied to the Tabbed-Textbox on the Process page 
+====================================================== */		
+
+#container {
+	max-height: 450px;
+}
+
+#tabs {
+	width: 100%;
+	height: 425px;
+	margin: 20px 0;
+	background: #e9e5dc;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+	box-shadow: 0 0 6px #333;
+	-moz-border-radius:7px;
+    -webkit-border-radius:7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+#tab-1, #tab-2, #tab-3, #tab-4, #tab-5, #tab-6, #tab-7, #tab-8, #tab-9, #tab-10, #tab-11, #tab-12 {
+	min-height: 290px;
+	max-height: 290px;
+	padding-top: 5px;
+	overflow-y: scroll;
+	overflow-x: no-display;
+	border-top:solid;
+	border-width: 3px;
+	border-color: #000;
+	font-size: 12pt;
+
+}
+#tabs ul {
+
+	background: #e9e5dc;
+	width: 90%;
+	padding-top: 4px;
+	text-align:center;
+	list-style-type: none;
+	-webkit-box-align:center;
+	-webkit-align-items:center;
+	    -ms-flex-align:center;
+	            -ms-grid-row-align:center;
+	        align-items:center;
+}
+#tabs li {
+	margin-left: 2%;
+	list-style: none;
+	display:inline-block;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e9e5dc;
+	width: 14%;
+}
+* html #tabs li {
+	display: inline;
+}
+#tabs li, #tabs li a {
+	width: 12.0%;
+	font-size:10px;	
+}
+#tabs ul li.active {
+	height: 26%;
+	border-top:3px #b40c00 solid;
+	background-color: #eee;
+	box-shadow: 0 0 6px #000;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#tabs ul li.active a {
+	color: #b40c00;
+}
+#tabs div {
+	background-color:#e9e5dc;
+	clear: both;
+	padding: 15px;
+	min-height: 200px;
+}
+#tabs div h3 {
+	margin-bottom: 12px;
+}
+#tabs div p {
+	line-height: 150%;
+	font-size: 10pt;
+}
+#tabs div p.indents{
+	line-height: 150%;
+	font-size: 10pt;
+	margin-left: 10%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+#tabs ul li a {
+	text-decoration: none;
+	padding: 5px;
+	color: #000;
+	font-weight: bold;
+	font-size: 78%;
+}
+
+
+.line_gap {
+	line-height: 12px;
+}
+.row1 {
+	width: 100%;
+	height: auto;
+	min-height: 8%;
+	padding-left: 5%;
+	padding-right: 1%;
+	-moz-border-radius:7px;
+    -webkit-border-radius:7px;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+.row2 {
+	width: 100%;
+	height: auto;
+	min-height: 8%;
+	padding-left: 5%;
+	padding-right: 1%;
+}
+
+
+
+
+/* >>>>>>>>>>>>>> 4. Contact Page <<<<<<<<<<<<<<<<< */
+
+/* ================================================== 
+	4.1 This section is for the contact details in the "contact" page
+===================================================== */
+
+#contact-page {							/* DYNAMIC */
+    background-color:#e9e5dc;
+    width: 92%;
+	padding: 5px 1% 40px 3%;
+	margin: 19px 2% 20px 2%;
+
+    border: 3px #e86600;
+	border-top-style: solid ;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+#cFHead{
+	display: none;
+	width: 100%;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#contact-page img.lrg {
+	display: block;
+	margin: 19px 10px 20px 12px;
+	width: 40%;
+	height: auto;
+	float: left;
+	border-style: solid; /* IE 9 */
+    -webkit-transform: skew(11deg, 5deg); /* Safari */
+    transform: skew(11deg, 5deg); /* Standard syntax */
+}
+
+
+#contact-page h1 {
+    font-size:20px;
+}
+
+.contact_page_h2 {
+    margin-bottom:11px;
+    font-style:italic;
+    font-weight:normal;
+}
+
+
+/* ====================================================
+ 	5.3 This section is for the social media bar/buttons in the contact page   
+=================================================== */
+
+
+p > a:hover {
+  color: #d9d9d9;
+  text-decoration: underline;
+}
+
+
+._12 {
+  font-size: 0.8em;
+}
+
+._14 {
+  font-size: 1.4em;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.fr-social-icons {
+  width: 55%;
+  height: 80px;
+  margin: 0 auto;
+  padding-left: 10px;
+  display: block;
+  float: left;
+  background-color:#e9e5dc;
+}
+
+.social-icon {
+  color: #fff;
+}
+
+ul.social-icons {
+  margin-top: 0;
+}
+
+li img{
+	width: 12%;
+	margin-left: 0.5%;
+}
+
+li img:hover{
+	box-shadow: 2px 2px 7px #b40c00;
+}
+
+.social-icons li {
+  vertical-align: top;
+  display: inline;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fa-facebook {
+  padding: 10px 14px 7px 14px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-twitter {
+  padding: 10px 10px 7px 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-twitter:hover {
+  background-color: #00aced;
+  box-shadow: 2px 2px 2px #b40c00;
+}
+
+.fa-rss {
+  padding: 10px 12px 7px 12px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-rss:hover {
+  background-color: #eb8231;
+}
+
+.fa-youtube {
+  padding: 10px 12px 7px 11px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-youtube:hover {
+  background-color: #e64a41;
+}
+
+.fa-linkedin {
+  padding: 10px 11px 8px 11px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-linkedin:hover {
+  background-color: #0073a4;
+  box-shadow: 2px 2px 2px #b40c00;
+}
+
+.fa-google-plus {
+  padding: 10px 10px 7px 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+  background-color: #e9e5dc;
+}
+
+.fa-google-plus:hover {
+  background-color: #e25714;
+}
+
+
+
+
+
+/* ================================================== 
+	5.4 This section is for the SUBMITING EMAIL details + Login   
+===================================================== */
+
+#email_container{
+	width: 88%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+form {
+	width: 100%;
+	min-height: 160px;
+}
+.mobileH2 {
+	font-size: 20px;
+}
+
+.e_title {
+	width: 17%;
+	height: 15px;
+	padding: 10px 2% 10px 2%;
+	font-size: 9px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	/*border-top-right-radius: none;*/
+	border-bottom-left-radius: 15px;
+	/*border-bottom-right-radius: none;*/
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.e_title_input {
+	width: 70%;
+	height: 22px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size: 14px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	/*border-top-left-radius: none;*/
+	border-top-right-radius: 15px;
+	/*border-bottom-left-radius: none;*/
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+.txtbox {
+	margin: 0 2%;
+}
+
+.btn_submit {
+	width: 80px;
+	height: 40px;
+	padding: 4px 2%;
+	font-size: 12px;
+	font-weight: 600;
+	display: inline-block;
+	border: 1px #187E20;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #187E20;
+    -webkit-box-shadow: inset 0 0 10px #187E20;
+    box-shadow:         inset 0 0 10px #187E20;
+}
+
+.btn_submit:hover {
+	background-color: #FFFFFF;
+	border: 1px #1D5622;
+	-moz-border-radius:14px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	box-shadow: 0 0 20px #1B513C;
+}
+
+.btn_adminLogin {
+	float: right;
+	width: 60px;
+	height: 30px;
+	margin-right: 2%;
+	padding: 2% 3%;
+	font-size: 12px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #b40c00 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #b40c00;
+    -webkit-box-shadow: inset 0 0 10px #b40c00;
+    box-shadow:         inset 0 0 10px #b40c00;
+}
+
+
+.login_header {
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login_container{
+	width: 89.6%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+.login_title {
+	width: 17%;
+	height: 40px;
+	padding: 19px 2% 10px 2%;
+	font-size:18px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	/*border-top-right-radius: none;*/
+	border-bottom-left-radius: 15px;
+	/*border-bottom-right-radius: none;*/
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.login_title_input {
+	width: 74%;
+	height: 33px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size:18px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	/*border-top-left-radius: none;*/
+	border-top-right-radius: 15px;
+	/*/border-bottom-left-radius: none;*/
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.body_DB {
+	height: auto;
+}
+
+#database_container{
+	width: 88%;
+	height: auto;
+	display: inline-block;
+	margin: 2%;
+	padding: 3%;
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+
+
+.database_table {
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border-radius: 15px;
+  /*border: 1px solid #167F92;*/
+  border: 1px solid #b40c00;
+}
+.database_table tr {
+  /*border: 1px solid #D9E4E6;*/
+  border: 1px solid #b40c00;
+}
+.database_table tr:nth-child(odd) {
+  background-color: #fef1f0;
+}
+.database_table th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #b40c00;
+  color: #FFF;
+  padding: 1em;
+}
+
+.database_table th:first-child {
+  display: table-cell;
+  text-align: center;
+  /*border-radius: 15px;*/
+  border-top-left-radius: 15px;
+  /*border-top-right-radius: none;*/
+
+}
+.database_table th:nth-child(2) {
+  display: table-cell;
+  text-align: center;
+  /*border-top-left-radius: none;*/
+  border-top-right-radius: 15px;
+
+}
+.database_table th:nth-child(2) span {
+  display: none;
+}
+/*  .database_table th:nth-child(2):after {
+  content: attr(data-th);
+} */
+
+.database_table td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 90%
+}
+.database_table td:first-child {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid #f8c7c3;
+}
+
+
+.database_table th, .database_table td {
+  text-align: center;
+  margin: .5em 1em;
+}
+
+.del_title {
+	width: 17%;
+	height: 40px;
+	padding: 19px 2% 10px 2%;
+	font-size:18px;
+	font-weight: 600;
+	text-align: right;
+	display: inline-block;
+	
+	background: #DFDCDB;
+	border: 1px #e86600 solid;
+	border-top-left-radius: 15px;
+	/*border-top-right-radius: none;*/
+	border-bottom-left-radius: 15px;
+	/*border-bottom-right-radius: none;*/
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.del_title_input {
+	width: 74%;
+	height: 33px;
+	padding: 2% 2%;
+	margin-left: -1%;
+	font-size:18px;
+	font-weight: 600;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+	background: #F1F1F1;
+	border: 1px #e86600 solid;
+	/*border-top-left-radius: none;*/
+	border-top-right-radius: 15px;
+	/*border-bottom-left-radius: none;*/
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.btn_admin_del {
+	float: right;
+	width: 126px;
+	height: 46px;
+	padding: 1% 3%;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #b40c00 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #b40c00;
+    -webkit-box-shadow: inset 0 0 10px #b40c00;
+    box-shadow:         inset 0 0 10px #b40c00;
+}
+
+.btn_admin_logout {
+	float: right;
+	width: 85px;
+	height: 22px;
+	padding: 20px 20px;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px #e86600 solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px #e86600;
+    -webkit-box-shadow: inset 0 0 10px #e86600;
+    box-shadow:         inset 0 0 10px #e86600;
+}
+
+.btn_admin_BTAR {
+	float: left;
+	width: 140px;
+	height: 45px;
+	padding: 1% 3%;
+	font-size:16px;
+	font-weight: 600;
+	color: #000;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px green solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	-moz-box-shadow:    inset 0 0 10px green;
+    -webkit-box-shadow: inset 0 0 10px green;
+    box-shadow:         inset 0 0 10px green;
+}
+
+
+#sent_container {
+	width: 75%;
+	min-height: 300px;
+	display: inline-block;
+	margin: 0 auto;
+	padding: 4%;
+    border: 1px solid #e86600;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	-moz-box-shadow:    inset 0 0 25px #e86600;
+    -webkit-box-shadow: inset 0 0 25px #e86600;
+    box-shadow:         inset 0 0 25px #e86600;
+}
+
+
+
+
+
+.cont_box {
+	width: 82%;
+	height: 240px;
+	margin: 1% 0 -5% 5%;
+	font-size: 16px;
+}
+.cont_icons {
+	width: 5%;
+	height: auto;
+	padding: 0 5%;
+	font-size: 15px;
+	line-height: 18px;
+}
+.cont_details {
+	width: 82%;
+	height: auto;
+	padding-left: 3%;
+	font-size: 12px;
+	line-height: 113%;
+}
+p.details {
+	width: 90%;
+	font-size:12px;
+	line-height: 156%;
+}
+.hours {
+	width: 80%;
+	height: auto;
+	padding-left:5%;
+}
+
+
+
+
+
+/* ================================================== 
+	5.3 This section is for displaying CONTACT DETAILS   
+===================================================== */
+
+.contact_details {
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	margin: 2% 0 1% 2.5%;
+	/*border: 1px blue solid;*/
+}
+#our_details {
+	width: 95%;
+	height: 350px;
+	/*border: 1px red solid;*/
+	padding: 10px 2%;
+	margin-bottom: 12px;
+	display: inline-block;
+}
+.cont_icons {
+	width: 3%;
+	height: auto;
+	padding: 0 1%;
+	display: inline-block;
+	line-height: 1.3;
+}
+.cont_details {
+	width: 40%;
+	height: auto;
+	padding-left: 3%;
+	line-height: 1.5;
+	display: inline-block;
+}
+.hours {
+	width: 38%;
+	position: relative;
+	top: -100px;
+	margin-top: -55px;
+	height: auto;
+	padding-left:5%;
+	display: inline-block;
+}
+ 
+ /* ====================================================
+ 	4.3 This section formats the GoogleMap feature in the "contact" page   
+=================================================== */
+  .gMSpacer {
+	width: 92%;
+	height: 40px;
+	margin: -8% 2% -4% 2%;
+	padding: 0 2% 1% 2%;
+	background: #e9e5dc;
+	border: 3px #e86600;
+	border-top-style: none ;
+    border-right-style: solid;
+    border-bottom-style: none;
+    border-left-style: solid;
+}
+
+#gmap_container{
+	border-style: solid;
+	/*border-width: 1px #000 solid;*/
+	width: 88%;
+	height: 400px;
+	margin: 2% 2%;
+	padding: 3% 4%;
+	background: #e9e5dc; 
+	border: 3px #e86600;
+	border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+/* CSS for the GoogleMaps button */
+#gmap_canvas {						/* DYNAMIC */
+	width: 100%;
+	height:400px;
+	float:left;
+	z-index: 5;
+	overflow:hidden;
+	-webkit-box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+	-moz-box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+	box-shadow: 0px -3px 15px 2px rgba(0,0,0,0.76);
+	-moz-border-radius:15px;
+    -webkit-border-radius:15px;
+	border-radius:15px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+ 
+
+}
+	

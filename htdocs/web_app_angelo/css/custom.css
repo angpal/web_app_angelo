@@ -1,0 +1,44 @@
+div{
+	min-height: 50px;
+}
+.login-btn {
+	float: right;
+	margin-right: 5%;
+	margin-left: 2%;
+}
+ header {
+ 	clear: both;
+ }
+
+.logo {
+	margin-left:  auto;
+	margin-right: auto;
+	max-height: 200px;
+}
+.contact-info {
+	margin-top: 24px;
+}
+
+/* main content area */
+
+.inner-main-content {
+	min-height: 500px;
+}
+.img_used_car {
+	margin-left:  auto;
+	margin-right: auto;
+	/*min-width: 150px;*/
+	/*max-width: 300px;*/
+}
+
+/* main content area */
+footer.navbar {
+	margin-bottom: 0;
+	background-color: green;
+}
+
+footer.navbar p {
+	text-align:  center;
+	line-height: 50px;
+	
+}
