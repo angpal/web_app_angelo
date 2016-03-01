@@ -210,8 +210,9 @@ function test_input($data) {
 
 
                       <div class="row">
-                        <div class="col-xs-1"></div>
-                        <div class="col-xs-10">
+                        <!--<div class="col-xs-1"></div>
+                        <div class="col-xs-10">-->
+                        <div class="col-xs-12">
                           <article class="inner-main-content">
 
 
@@ -241,7 +242,6 @@ function test_input($data) {
                                           echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
                                           echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
                                           echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
-                                          echo "<h4>Password: <small>" . $row['password'] . "</small></h4>";
                                           echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
                                         echo "</div>";
                                       echo "</div>";
