@@ -84,7 +84,12 @@ function test_input($data) {
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+     <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+    
 
     <header>
     <div class="row">
@@ -131,7 +136,11 @@ function test_input($data) {
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo "<li><a href='#' class='btn hidden-sm hidden-md hidden-lg'>Employee Login</a></li>";
+          }
+        ?>
       </ul>
       
 
@@ -175,7 +184,7 @@ function test_input($data) {
 
                         if (isset($_SESSION['security_lev'])) {
 
-                            if ($_SESSION['security_lev'] == 'admin') {
+                            if ($_SESSION['security_lev'] == 'Admin') {
                               echo "
                                     <div class='adm_opt'>
                                         <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete User</a>
@@ -187,7 +196,7 @@ function test_input($data) {
                                         <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a></div>";
                                     
                               }
-                              if ($_SESSION['security_lev'] == 'sales') {
+                              if ($_SESSION['security_lev'] == 'Sales') {
                               echo "
                                     <div class='sales_opt'>
                                     <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>

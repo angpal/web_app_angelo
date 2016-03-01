@@ -16,7 +16,7 @@ $password = md5($_POST['password']);
 
 include('connect.php');
 
-$query = "SELECT * FROM `user_login` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
+$query = "SELECT * FROM `staff` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
 
 $result = mysqli_query($con, $query);
 
@@ -45,6 +45,7 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+
 
 
 ?>
@@ -84,7 +85,12 @@ function test_input($data) {
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+     <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+    
 
     <header>
     <div class="row">
@@ -131,7 +137,11 @@ function test_input($data) {
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo "<li><a href='#' class='btn hidden-sm hidden-md hidden-lg'>Employee Login</a></li>";
+          }
+        ?>
       </ul>
       
 
@@ -156,39 +166,39 @@ function test_input($data) {
 
                                 if (isset($_SESSION['security_lev'])) {
 
-                                    if ($_SESSION['security_lev'] == 'admin') {
-                                echo "
-                                    <div class='adm_opt'>
-                                        <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
-                                        <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete Vehicle</a>
-                                        <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                        <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                        <br><br>
-                                        <a class='btn btn-info staff_btns' href='used_vehicles.php'>View Vehicle</a>
-                                        <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>
-                                        <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
-                                        <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
-                                        <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
-                                    </div>
-                                ";
-                            }
-                                if ($_SESSION['security_lev'] == 'sales') {
-                                    echo "
-                                      <div class='sales_opt'>
-                                        <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>
-                                        <a class='btn btn-info staff_btns' href='used_vehicles.php'>View Vehicle</a>
-                                        <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
-                                        <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
-                                        <br><br>
-                                        <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                        <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                        <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
-                                      </div>
-                                    ";
-                                } 
-                                     
-                                }
+                                    if ($_SESSION['security_lev'] == 'Admin') {
+                                        echo "
+                                            <div class='adm_opt'>
+                                                <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
+                                                <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete Vehicle</a>
+                                                <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
+                                                <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
+                                                <br><br>
+                                                <a class='btn btn-info staff_btns' href='used_vehicles.php'>View Vehicle</a>
+                                                <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>
+                                                <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
+                                                <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                                <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                            </div>
+                                        ";
+                                    }
 
+                                    if ($_SESSION['security_lev'] == 'Sales') {
+                                        echo "
+                                          <div class='sales_opt'>
+                                            <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>
+                                            <a class='btn btn-info staff_btns' href='used_vehicles.php'>View Vehicle</a>
+                                            <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
+                                            <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                            <br><br>
+                                            <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
+                                            <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
+                                            <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                          </div>
+                                        ";
+                                    } 
+                                         
+                                }
                             ?>
 
                   <br><br>
@@ -196,34 +206,69 @@ function test_input($data) {
                   
 
 
-                    <div class="row">
-                      <div class="col-xs-12">
 
-                          <div class="row">
-                              <div class="col-xs-1"></div>
-                              <div class="col-xs-11">
-                                <article class="inner-main-content">
-                                  
-                                  <div class="row employee-login">
-                                    <div class="col-xs-6 col-md-3 col-lg-3" style="border:1px black solid">
-                                      <h4>Staff ID: <small>1234</small></h4>
-                                      <h4>First Name: <small>Bob</small></h4>
-                                      <h4>Last Name: <small>Smith</small></h4>
-                                      <h4>Email: <small>bob@ash.com</small></h4>
-                                      <h4>Phone: <small>0409123456</small></h4>
-                                    </div>
-                                    <div class="col-xs-6 col-md-2 col-lg-2">
-                                      <img src="../images/bob.jpg" alt="logo" class="img_used_car img-responsive" style="border:1px red solid">
-                                    </div>
-                                  </div>
 
-                                  <br><br>
+
+
+
+                      <div class="row">
+                        <div class="col-xs-1"></div>
+                        <div class="col-xs-10">
+                          <article class="inner-main-content">
+
+
+                            
+                              <div class='row'>
+
+                                <?php
+
+                                include('connect.php');
+
+                                $query = "SELECT * FROM `staff` ";
+
+
+                                $result = mysqli_query($con, $query);
+
+                                  while ($row = mysqli_fetch_assoc($result)) {
+
+                                      echo "<div class='col-xs-12 col-md-6 shadow'>";
+                                        echo "<div class='col-xs-6 col-md-6 staff_image_box' style='padding: 50px 1%'>";
+                                          echo "<img src='../images/staff_" . $row['staff_id'] . ".png' alt='logo' class='img_staff img-responsive'>";
+                                        echo "</div>";
+
+                                        echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
+                                          echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
+                                          echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
+                                          echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
+                                          echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
+                                          echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
+                                          echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
+                                          echo "<h4>Password: <small>" . $row['password'] . "</small></h4>";
+                                          echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
+                                        echo "</div>";
+                                      echo "</div>";
+                                  }
+
+                                ?>
 
                               </div>
-                          </div>
+                           
 
+                          </article>
+                        </div>
                       </div>
-                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

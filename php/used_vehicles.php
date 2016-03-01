@@ -30,7 +30,12 @@
   <body>
 
 
-    <a href="login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+     <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+
 
     <header>
     <div class="row">
@@ -80,7 +85,7 @@
         <li><a href="finance.html">Finance</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="../php/login.php" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <li><a href="login.php" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
       </ul>
       
 
@@ -97,7 +102,7 @@
       <h1>USED VEHICLES</h1>
 
 
-      <div class='well well_bg'>
+      
         <div class='row'>
 
           <?php
@@ -139,7 +144,7 @@
           ?>
 
         </div>
-      </div>
+     
 
     </article>
   </div>

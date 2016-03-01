@@ -2,49 +2,35 @@
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access = "";
-if ($_POST) {
-  
-//$aa = $_POST["password"];
-//$req_password = "admin";
 
-//$aa = $_POST["security_lev"];
+
+$success = "";
+
+if ($_POST) {
+
+  $firstname = $lastname = $street = $city = $state = $postcode = $phone_no = $email = $username = $password = $security_lev = "";
+
+  $firstname = $_POST['firstname'];
+  $lastname = $_POST['surname'];
+  $email = $_POST['email'];
+  $phone_no = $_POST['phone_no'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $security_lev = $_POST['security_lev'];
   
-//echo $req_password . $password;
-$username = test_input($_POST['username']);
-$password = md5($_POST['password']);
 
 include('connect.php');
 
-$query = "SELECT * FROM `user_login` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
+$query = "INSERT INTO `staff` (`staff_id`, `firstname`, `surname`, `email`, `phone`, `username`, `password`, `security_lev`) VALUES (NULL, '$firstname', '$lastname', '$email', '$phone_no', '$username', $password', '$security_lev');";
 
 $result = mysqli_query($con, $query);
 
-
-//Below 1st line: confirm if username and password exist, go to next line
-//Below 2nd line: confirm if entered password is the same as 
-//                the required password to access page
-  
-    if (mysqli_num_rows($result)==1) {
-    
-        while ($row = mysqli_fetch_assoc($result)) {
-
-        $_SESSION['security_lev'] = $row['security_lev'];
-
-        }
-
-    } else {
-      $message = "<p>Incorrect Username or Password</p>";
-    }
-
+  if ($result) {
+    $success = "You have successfully added " . $firstname . " " . $lastname . " to the database!";
+  }
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+
 
 
 ?>
@@ -84,7 +70,12 @@ function test_input($data) {
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+     <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+    
 
     <header>
     <div class="row">
@@ -131,7 +122,11 @@ function test_input($data) {
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo "<li><a href='#' class='btn hidden-sm hidden-md hidden-lg'>Employee Login</a></li>";
+          }
+        ?>
       </ul>
       
 
@@ -172,7 +167,7 @@ function test_input($data) {
 
                                 if (isset($_SESSION['security_lev'])) {
 
-                                    if ($_SESSION['security_lev'] == 'admin') {
+                                    if ($_SESSION['security_lev'] == 'Admin') {
                                 echo "
                                     <div class='adm_opt'>
                                         <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
@@ -188,7 +183,7 @@ function test_input($data) {
                                     </div>
                                 ";
                             }
-                                if ($_SESSION['security_lev'] == 'sales') {
+                                if ($_SESSION['security_lev'] == 'Sales') {
                                     echo "
                                       <div class='sales_opt'>
                                         <a class='btn btn-info staff_btns' href='view_customer.php'>View Customer</a>
@@ -223,25 +218,7 @@ function test_input($data) {
                                   <input type="text" class="form-control" id="surname" name="surname">
                               </div>
 
-                              <div class="form-group">
-                                  <label for="street">Street:</label>
-                                  <input type="text" class="form-control" id="street" name="street">
-                              </div>
 
-                              <div class="form-group">
-                                  <label for="city">City/Suburb:</label>
-                                  <input type="text" class="form-control" id="city" name="cty">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="state">State:</label>
-                                  <input type="text" class="form-control" id="state" name="state">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="postcode">Postcode:</label>
-                                  <input type="text" class="form-control" id="postcode" name="postcode">
-                              </div>
 
                               <div class="form-group">
                                   <label for="phone_no">Phone Number:</label>
@@ -251,6 +228,24 @@ function test_input($data) {
                               <div class="form-group">
                                   <label for="email">Email:</label>
                                   <input type="email" class="form-control" id="email" name="email">
+                              </div>
+
+
+
+
+                              <div class="form-group">
+                                  <label for="username">Username:</label>
+                                  <input type="text" class="form-control" id="username" name="username">
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="password">Password:</label>
+                                  <input type="text" class="form-control" id="password" name="password">
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="text">Security Level:</label>
+                                  <input type="text" class="form-control" id="security_lev" name="security_lev">
                               </div>
 
                               <button type="submit" class="btn btn-default">Submit</button>

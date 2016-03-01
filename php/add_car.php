@@ -79,7 +79,12 @@ $result = mysqli_query($con, $query);
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+    <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+   
 
     <header>
     <div class="row">
@@ -126,7 +131,11 @@ $result = mysqli_query($con, $query);
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo "<li><a href='#' class='btn hidden-sm hidden-md hidden-lg'>Employee Login</a></li>";
+          }
+        ?>
       </ul>
       
 
@@ -169,7 +178,7 @@ $result = mysqli_query($con, $query);
 
                                 if (isset($_SESSION['security_lev'])) {
 
-                                    if ($_SESSION['security_lev'] == 'admin') {
+                                    if ($_SESSION['security_lev'] == 'Admin') {
                                 echo "
                                     <div class='adm_opt'>
                                         <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
@@ -185,7 +194,7 @@ $result = mysqli_query($con, $query);
                                     </div>
                                 ";
                             }
-                                if ($_SESSION['security_lev'] == 'sales') {
+                                if ($_SESSION['security_lev'] == 'Sales') {
                                     echo "
                                       <div class='sales_opt'>
                                         <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>

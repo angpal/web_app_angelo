@@ -14,7 +14,7 @@ div{
 
 body {
 	/*background-color: green;*/
-	background: rgba(102, 206, 45, .1);
+	background: rgba(102, 206, 45, .4);
 }
  header {
  	clear: both;
@@ -34,6 +34,11 @@ body {
 	font-size: 16px;
 }
 
+
+.opt_container{
+	width: 100%;
+	text-align:  center;
+}
 .login-btn {
 	float: right;
 	margin-right: 5%;
@@ -57,9 +62,26 @@ body {
 	word-break: normal;
 	white-space: normal;
 }
-/*a {word-break: break-all;
-white-space: normal;}
-*/
+
+
+.login_opt_btn {
+	width: 17% !important;
+	min-width: 100px;
+	min-height: 74px !important;
+	margin-right: 2%;
+	font-size: 14pt;
+	word-break: normal;
+	white-space: normal;
+}
+
+.login_pg_logout_btn {
+	width: 16% !important;
+	min-width: 100px;
+	min-height: 74px !important;
+	margin-left: 3%;
+	font-size: 14pt;
+	font-weight: 800;
+}
 
 .contact-info {
 	margin-top: 24px;
@@ -88,15 +110,22 @@ font-size: 30px;
 	/*min-width: 150px;*/
 	/*max-width: 300px;*/
 }
-
+.img_staff {
+	margin-left:  auto;
+	margin-right: auto;
+	width: 95%;
+}
 .car_image_box {
+	height: 457px;
+}
+.staff_image_box {
 	height: 457px;
 }
 
 .shadow {
-   -moz-box-shadow:    inset 0 0 200px #256A00;
-   -webkit-box-shadow: inset 0 0 200px #256A00;
-   box-shadow:         inset 0 0 200px #256A00;
+   -moz-box-shadow:    inset 0 0 50px #575757;
+   -webkit-box-shadow: inset 0 0 50px #575757;
+   box-shadow:         inset 0 0 50px #575757;
    background-color: #fdfdfd;
 }
 

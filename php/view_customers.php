@@ -43,7 +43,12 @@ $username = $password = $security_lev = $aa = $access = $req_access = "";
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+     <?php  
+          if (!isset($_SESSION['security_lev'])){
+              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+          }
+    ?>
+    
 
     <header>
     <div class="row">
@@ -115,7 +120,7 @@ $username = $password = $security_lev = $aa = $access = $req_access = "";
 
                                 if (isset($_SESSION['security_lev'])) {
 
-                                    if ($_SESSION['security_lev'] == 'admin') {
+                                    if ($_SESSION['security_lev'] == 'Admin') {
                                 echo "
                                     <div class='adm_opt'>
                                         <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
@@ -131,7 +136,7 @@ $username = $password = $security_lev = $aa = $access = $req_access = "";
                                     </div>
                                 ";
                             }
-                                if ($_SESSION['security_lev'] == 'sales') {
+                                if ($_SESSION['security_lev'] == 'Sales') {
                                     echo "
                                       <div class='sales_opt'>
                                         <a class='btn btn-info staff_btns' href='view_customers.php'>View Customer</a>
