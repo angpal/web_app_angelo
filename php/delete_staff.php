@@ -2,7 +2,7 @@
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access = "";
+$username = $password = $security_lev = $aa = $access = $req_access = $success =  "";
 if ($_POST) {
   
 //$aa = $_POST["password"];
@@ -132,7 +132,7 @@ function test_input($data) {
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
         <li><a href="../pages/specials.html">Specials</a></li>
-        <li><a href="../pages/used_vehicles.html">Used Vehicles</a></li>
+        <li><a href="used_vehicles.php">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
@@ -153,67 +153,75 @@ function test_input($data) {
 
 
 
-</div>
-  <div class = "container">
     <div class="row">
-      <div class= "col-md-offset-3 col-md-8 ">
+        <div class="col-xs-12">
+            <div class="inner-main-content">
 
-          <?php 
+              <div class= "col-md-offset-3 col-md-8 ">
 
-              if (!isset($_SESSION['security_lev'])){
+              <h1>"Delete" a Staff Member from the Database</h1>
+              <br>
+              <h2><?php echo $success; ?></h2>
 
-                  echo "<h1>Universal Staff Login: <small>Enter your login details</small></h1>
-                  <form method='POST' action=" . htmlspecialchars($_SERVER["PHP_SELF"]) . ">
+                      <?php
 
-                          <div class='input-group input-group-lg'>
-                                <span class='input-group-addon' id='sizing-addon1'>Username</span>
-                                <input type='text' name='username' class='form-control' placeholder='Username' aria-describedby='sizing-addon1'>
-                          </div><br>
+                          if (isset($_SESSION['security_lev'])) {
 
-                          <div class='input-group input-group-lg'>
-                                <span class='input-group-addon' id='sizing-addon1'>Password</span>
-                                <input type='password' name='password' class='form-control' placeholder='Password' aria-describedby='sizing-addon1'>
-                          </div><br>
-
-                          <input type='submit' name='submit' class='btn btn-success'></input>
-                  </form> ";
-
-
-              } 
-                       
-
-                        if (isset($_SESSION['security_lev'])) {
-
-                            if ($_SESSION['security_lev'] == 'Admin') {
-                              echo "
-                                    <div class='adm_opt'>
-                                        <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete User</a>
-                                        <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete Vehicle</a>
-                                        <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                        <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                        <br><br>
-                                        <a class='btn btn-success staff_btns' href='sale.php'>Make a Sale</a>
-                                        <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a></div>";
-                                    
+                              if ($_SESSION['security_lev'] == 'Admin') {
+                                  echo "<div class='adm_opt'>
+                                          <a class='btn btn-primary staff_btns' href='add_staff.php'>Add<br>Staff</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
+                                          <br><br>
+                                          <a class='btn btn-danger staff_btns' href='#'>Delete<br>Staff</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete<br>Vehicle</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete<br>Customer</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                  </div>";
                               }
                               if ($_SESSION['security_lev'] == 'Sales') {
-                              echo "
-                                    <div class='sales_opt'>
-                                    <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                    <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                    <a class='btn btn-success staff_btns' href='sale.php'>Make a Sale</a>
-                                    <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a></div>";
+                                  echo "<div class='sales_opt'>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customer</a>
+                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                  </div>";
                               }  
-                             
-                        }
+                          }
+                      ?>
 
-                    echo $message;    
-          ?>
-        
-      </div>
+                  <br><br>
+
+                  <div class="row">
+                      <div class="col-xs-12">
+
+                          <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
+
+                              <div class="form-group">
+                                 <label for="category_id">Staff_ID:</label>
+                                  <input type="text" class="form-control" id="staff_id" name="staff_id">
+                              </div>
+
+                              <button type="submit" class="btn btn-default">Submit</button>
+
+                          </form>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-
 
 
 

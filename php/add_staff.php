@@ -118,7 +118,7 @@ $result = mysqli_query($con, $query);
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
         <li><a href="../pages/specials.html">Specials</a></li>
-        <li><a href="../pages/used_vehicles.html">Used Vehicles</a></li>
+        <li><a href="used_vehicles.php">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
@@ -168,35 +168,34 @@ $result = mysqli_query($con, $query);
                                 if (isset($_SESSION['security_lev'])) {
 
                                     if ($_SESSION['security_lev'] == 'Admin') {
-                                echo "
-                                    <div class='adm_opt'>
-                                        <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete Customer</a>
-                                        <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete Vehicle</a>
-                                        <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                        <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                        <br><br>
-                                        <a class='btn btn-info staff_btns' href='used_vehicle.php'>View Vehicle</a>
-                                        <a class='btn btn-info staff_btns' href='view_customer.php'>View Vehicle</a>
-                                        <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
-                                        <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
-                                        <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
-                                    </div>
-                                ";
-                            }
-                                if ($_SESSION['security_lev'] == 'Sales') {
-                                    echo "
-                                      <div class='sales_opt'>
-                                        <a class='btn btn-info staff_btns' href='view_customer.php'>View Customer</a>
-                                        <a class='btn btn-info staff_btns' href='view_car.php'>View Vehicle</a>
-                                        <a class='btn btn-info staff_btns' href='view_staff.php'>View Staff</a>
-                                        <a class='btn btn-success staff_btns' href='sale.php'>Make a Sale</a>
-                                        <br><br>
-                                        <a class='btn btn-primary staff_btns' href='add_customer.php'>Add Customer</a>
-                                        <a class='btn btn-primary staff_btns' href='add_car.php'>Add Vehicle</a>
-                                        <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
-                                      </div>
-                                    ";
-                                } 
+                                        echo "<div class='adm_opt'>
+                                          <a class='btn btn-primary staff_btns' href='#'>Add<br>Staff</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
+                                          <br><br>
+                                          <a class='btn btn-danger staff_btns' href='delete_staff.php'>Delete<br>Staff</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete<br>Vehicle</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete<br>Customer</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                        </div>";
+                                    } 
+                                    if ($_SESSION['security_lev'] == 'Sales') {
+                                        echo "<div class='sales_opt'>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customer</a>
+                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                        </div>";
+                                    } 
                                      
                                 }
 

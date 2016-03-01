@@ -132,7 +132,7 @@ function test_input($data) {
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
         <li><a href="../pages/specials.html">Specials</a></li>
-        <li><a href="../pages/used_vehicles.html">Used Vehicles</a></li>
+        <li><a href="used_vehicles.php">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
@@ -191,7 +191,7 @@ function test_input($data) {
                               echo "
                                   <div class='adm_opt'>
                                       
-                                      <a class='btn btn-primary login_opt_btn' href='add_car.php'>Add Staff<br>Member</a>
+                                      <a class='btn btn-primary login_opt_btn' href='add_staff.php'>Add Staff<br>Member</a>
                                       <a class='btn btn-primary login_opt_btn' href='add_car.php'>Add<br>Vehicle</a>
                                       <a class='btn btn-primary login_opt_btn' href='add_customer.php'>Add<br>Customer</a>
                                       <a class='btn btn-success login_opt_btn' href='add_sale.php'>Make a Sale</a>
@@ -273,3 +273,8 @@ function test_input($data) {
 <!--
 <h2>Make: <small>Toyota</small>
   -->
+
+
+
+
+                            

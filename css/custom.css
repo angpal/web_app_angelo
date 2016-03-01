@@ -45,8 +45,9 @@ body {
 	margin-left: 2%;
 }
 .logout_btn {
-	margin-left: 3%;
-	font-size: 8pt;
+	width: 8%;
+	margin-left: 2%;
+	font-size: 10pt;
 }
 .adm_opt{
 	width: auto;
@@ -58,7 +59,7 @@ body {
 	min-width: 60px;
 	min-height: 44px!important;
 	margin-right: 1%;
-	font-size: 8pt;
+	font-size: 10pt;
 	word-break: normal;
 	white-space: normal;
 }
