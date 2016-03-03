@@ -25,7 +25,7 @@ if ($_POST) {
   $transmission = $_POST['transmission'];
   $specials = $_POST['specials'];
 
-echo $availability . " " . $manufacturer_id . " " . $category_id . " " . $model;
+
 
 include('connect.php');
 
@@ -35,10 +35,9 @@ VALUES (NULL, '$availability', '$manufacturer_id', '$category_id', '$model', '$y
 $result = mysqli_query($con, $query);
 
   if ($result) {
-    $success = "You have successfully added " . $manufacturer_id . " " . $model . " to the database!";
+    $success = "You have successfully added a " . $manufacturer_id . " " . $model . " " . "to the database!";
   }
 }
-
 
 
 
@@ -122,7 +121,7 @@ $result = mysqli_query($con, $query);
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>

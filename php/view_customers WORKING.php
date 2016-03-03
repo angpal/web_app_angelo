@@ -2,36 +2,9 @@
 session_start();
 $message = "<p></p>";
 
-
+$username = $password = $security_lev = $aa = $access = $req_access = "";
 
 $success = "";
-
-if ($_POST) {
-
-  $firstname = $lastname = $street = $city = $state = $postcode = $phone_no = $email = $username = $password = $security_lev = "";
-
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['surname'];
-  $email = $_POST['email'];
-  $phone_no = $_POST['phone_no'];
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $security_lev = $_POST['security_lev'];
-  
-
-include('connect.php');
-
-$query = "INSERT INTO `staff` (`staff_id`, `firstname`, `surname`, `email`, `phone`, `username`, `password`, `security_lev`) VALUES (NULL, '$firstname', '$lastname', '$email', '$phone_no', '$username', $password', '$security_lev');";
-
-$result = mysqli_query($con, $query);
-
-  if ($result) {
-    $success = "You have successfully added " . $firstname . " " . $lastname . " to the database!";
-  }
-}
-
-
-
 
 ?>
 
@@ -118,15 +91,11 @@ $result = mysqli_query($con, $query);
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
         <li><a href="../pages/specials.html">Specials</a></li>
-        <li><a href="used_vehicles.php">Used Vehicles</a></li>
+        <li><a href="used_vehicles.html">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <?php  
-          if (!isset($_SESSION['security_lev'])){
-              echo "<li><a href='#' class='btn hidden-sm hidden-md hidden-lg'>Employee Login</a></li>";
-          }
-        ?>
+        <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
       </ul>
       
 
@@ -141,42 +110,25 @@ $result = mysqli_query($con, $query);
     <div class="row">
         <div class="col-xs-12">
             <div class="inner-main-content">
-              
-          <!--
-              <div class="row employee-login">
-                  <div class="col-xs-4">
-                      <a href="view_customer.html" class="btn btn-success">View Customer</a>
-                  </div>
-                  <div class="col-xs-4">
-                      <a href="add_customer.html" class="btn btn-success">Add Customer</a>
-                  </div>
-                  <div class="col-xs-4">
-                      <a href="add_sale.html" class="btn btn-success">Make Sale</a>
-                  </div>
-              </div>
-          -->
 
               <div class= "col-md-offset-3 col-md-8 ">
 
-              <h1>Add Customers</h1>
-              <br><br>
-
+              <h1>View CUSTOMER Details</h1>
+              <br>
                             <?php
-
-                            
 
                                 if (isset($_SESSION['security_lev'])) {
 
                                     if ($_SESSION['security_lev'] == 'Admin') {
                                         echo "<div class='adm_opt'>
-                                          <a class='btn btn-primary staff_btns' href='#'>Add<br>Staff</a>
+                                          <a class='btn btn-primary staff_btns' href='add_staff.php'>Add<br>Staff</a>
                                           <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
-                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_cutomers.php'>Add<br>Customer</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
                                           <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
                                           <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
-                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
+                                          <a class='btn btn-info staff_btns' href='#'>View<br>Customers</a>
                                           <br><br>
                                           <a class='btn btn-danger staff_btns' href='delete_staff.php'>Delete<br>Staff</a>
                                           <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete<br>Vehicle</a>
@@ -188,10 +140,10 @@ $result = mysqli_query($con, $query);
                                         echo "<div class='sales_opt'>
                                           <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customer</a>
                                           <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
-                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
-                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customers.php'>Add<br>Customer</a>
                                           <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
                                           <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
                                         </div>";
@@ -203,64 +155,85 @@ $result = mysqli_query($con, $query);
 
                   <br><br>
 
-                  <div class="row">
+                  
+
+
+                    <div class="row">
                       <div class="col-xs-12">
 
-                          <form role="form">
-                              <div class="form-group">
-                                  <label for="firstname">First Name:</label>
-                                  <input type="text" class="form-control" id="firstname" name="firstname">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="surname">Surname:</label>
-                                  <input type="text" class="form-control" id="surname" name="surname">
-                              </div>
-
-
-
-                              <div class="form-group">
-                                  <label for="phone_no">Phone Number:</label>
-                                  <input type="text" class="form-control" id="phone_no" name="phone_no">
-                              </div>
-
-                              <div class="form-group">
-                                  <label for="email">Email:</label>
-                                  <input type="email" class="form-control" id="email" name="email">
-                              </div>
+                          <div class="row">
+                            <article class="inner-main-content">
+                                  
+                                  
 
 
 
 
-                              <div class="form-group">
-                                  <label for="username">Username:</label>
-                                  <input type="text" class="form-control" id="username" name="username">
-                              </div>
 
-                              <div class="form-group">
-                                  <label for="password">Password:</label>
-                                  <input type="text" class="form-control" id="password" name="password">
-                              </div>
+                                        <?php
 
-                              <div class="form-group">
-                                  <label for="text">Security Level:</label>
-                                  <input type="text" class="form-control" id="security_lev" name="security_lev">
-                              </div>
+                                        if ($_POST) {
 
-                              <button type="submit" class="btn btn-default">Submit</button>
+                                          $surname = "";
 
-                          </form>
+                                          $surname = $_POST['surname'];
+
+
+                                        include('connect.php');
+
+                                        $query = "SELECT * FROM `customers` WHERE `surname` LIKE '%$surname%'";
+
+
+                                        $result = mysqli_query($con, $query);
+
+                                          
+
+
+                                            echo "<div class='well'>";
+                                            echo "<h4>Customer ID: <small>" . 'customer_id' . "</small></h4>";
+                                            echo "<h4>Firstname: <small>" . 'firstname' . "</small></h4>";
+                                            echo "<h4>Surname: <small>" . 'surname' . "</small></h4>";
+                                            echo "<h4>Street: <small>" . 'street' . "</small></h4>";
+                                            echo "<h4>City: <small>" . 'city' . "</small></h4>";
+                                            echo "<h4>State: <small>" . 'state' . "</small></h4>";
+                                            echo "<h4>Postcode: <small>" . 'postcode' . "</small></h4>";
+                                            echo "<h4>Phone No.: <small>" . 'phone_no' . "</small></h4>";
+                                            echo "<h4>Email: <small>" . 'email' . "</small></h4>";
+                                            echo "</div>";
+
+                                          }
+                                        
+
+
+
+
+                                        ?>
+
+                                          <div class="row">
+                                              <div class="col-xs-11">
+                                                <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
+                                                  <div class="form-group">
+                                                    <label for="surname">Surname:</label>
+                                                    <input type="text" class="form-control" id="surname" name="surname">
+                                                  </div>
+                                            
+                                                  <div class="form-group">
+                                                    <button type="submit" class="btn btn-default">Submit</button>
+                                                  </div>
+                                                </form>
+                                              </div>
+                                          </div>
+
+                                  <br><br>
+
+                            </article>
+                          </div>
                       </div>
-                  </div>
-
+                    </div>
               </div>
             </div>
         </div>
-
     </div>
-
-
-
 
 
 

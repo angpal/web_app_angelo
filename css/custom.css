@@ -24,6 +24,12 @@ body {
  	padding-left: 4%;
  }
 
+
+
+
+
+
+
 .logo {
 	margin-left:  auto;
 	margin-right: auto;
@@ -31,40 +37,72 @@ body {
 }
 
 .nav_font {
-	font-size: 16px;
+	font-size: 16px !important;
 }
 
+.emp_active {
+	font-style: italic;
+	font-weight: 500;
+	text-decoration: underline dotted #000;
+	/*text-shadow: 1px 31px 8px #000;*/
+}
 
 .opt_container{
 	width: 100%;
-	text-align:  center;
+	/*text-align:  center;*/
 }
 .login-btn {
 	float: right;
 	margin-right: 5%;
 	margin-left: 2%;
 }
+.login-btn {
+}
 .logout_btn {
-	width: 8%;
+	width: 10%;
 	margin-left: 2%;
-	font-size: 10pt;
+	font-size: 12pt;
+}
+.logout_btn:hover {
+	opacity: 0.5;
 }
 .adm_opt{
 	width: auto;
 	margin-left: auto;
 	margin-right: auto;
 }
+.adm_opt:hover {
+	opacity: 0.5;
+}
 .staff_btns{
 	width: 10% !important;
-	min-width: 60px;
+	min-width: 90px;
 	min-height: 44px!important;
 	margin-right: 1%;
-	font-size: 10pt;
+	font-size: 12pt;
+	word-break: normal;
+	white-space: normal;
+	opacity: 1;
+}
+.staff_btns:hover {
+	opacity: 0.5;
+}
+
+.past_staff_btn {
+	with: 10% !important;
+	min-width: 90px;
+	min-height: 44px!important;
+	margin-right: 1%;
+	background-image: none !important;
+	background-color: #f6f904;
+	color: #000;
+	font-size: 12pt;
 	word-break: normal;
 	white-space: normal;
 }
-
-
+.past_staff_btn:hover {
+	opacity: 0.5;
+}
 .login_opt_btn {
 	width: 17% !important;
 	min-width: 100px;
@@ -74,23 +112,24 @@ body {
 	word-break: normal;
 	white-space: normal;
 }
-
+.login_opt_btn:hover {
+	opacity: 0.5;
+}
 .login_pg_logout_btn {
-	width: 16% !important;
-	min-width: 100px;
+	width: 14% !important;
+	min-width: 90px;
 	min-height: 74px !important;
 	margin-left: 3%;
 	font-size: 14pt;
 	font-weight: 800;
 }
-
+.login_pg_logout_btn:hover {
+	opacity: 0.5;
+}
 .contact-info {
 	margin-top: 24px;
-	font-size: 20px;
+	font-size: 16px;
 }
-
-
-
 
 
 
@@ -103,6 +142,44 @@ font-size: 30px;
 
 .inner-main-content {
 	min-height: 500px;
+}
+.inner-main-top {
+	width: auto;
+	padding-left: 5%;
+	min-height: 230px;
+}
+.inner-main-bottom {
+	min-height: 220px;
+	text-align: center;
+}
+.side_bar {
+	min-height: 500px;
+}
+
+.page_title {
+	background-color: #000;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+.main_text {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 600;
+}
+.used_cars_link_btn {
+	float: right;
+	margin-right: 5%;
+	margin-left: 2%;
+}
+.contact_link_btn {
+	margin-top: -50px;
+}
+/*img.yard {
+	height: 100%;
+	width: auto;
+*/
 }
 .img_used_car {
 	margin-left:  auto;

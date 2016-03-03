@@ -127,7 +127,7 @@ function test_input($data) {
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
@@ -191,18 +191,19 @@ function test_input($data) {
                               echo "
                                   <div class='adm_opt'>
                                       
-                                      <a class='btn btn-primary login_opt_btn' href='add_staff.php'>Add Staff<br>Member</a>
+                                      <a class='btn btn-primary login_opt_btn' href='add_staff.php'>Add<br>Staff</a>
                                       <a class='btn btn-primary login_opt_btn' href='add_car.php'>Add<br>Vehicle</a>
                                       <a class='btn btn-primary login_opt_btn' href='add_customer.php'>Add<br>Customer</a>
                                       <a class='btn btn-success login_opt_btn' href='add_sale.php'>Make a Sale</a>
                                       <br><br>
-                                      <a class='btn btn-info login_opt_btn' href='used_vehicles.php'>View<br>Vehicle</a>
-                                      <a class='btn btn-info login_opt_btn' href='view_customers.php'>View<br>Customers</a>
                                       <a class='btn btn-info login_opt_btn' href='view_staff.php'>View<br>Staff</a>
+                                      <a class='btn btn-info login_opt_btn' href='used_vehicles.php'>View<br>Vehicle</a>
+                                      <a class='btn btn-info login_opt_btn' href='view_customers.php'>View<br>Customer</a>
                                       <br><br>
-                                      <a class='btn btn-danger login_opt_btn' href='delete_customer.php'>Delete<br>Customer</a>
+                                      
+                                      <a class='btn btn-danger login_opt_btn' href='delete_staff.php'>Delete<br>Staff</a>
                                       <a class='btn btn-danger login_opt_btn' href='delete_car.php'>Delete<br>Vehicle</a>
-                                      <a class='btn btn-danger login_opt_btn' href='delete_staff.php'>Delete Staff<br>Vehicle</a>
+                                      <a class='btn btn-danger login_opt_btn' href='delete_customers.php'>Delete<br>Customer</a>
                                       <a class='btn btn-warning login_pg_logout_btn' href='logout.php'>Log Out</a>
                                   </div>
                               ";
@@ -210,13 +211,13 @@ function test_input($data) {
                               if ($_SESSION['security_lev'] == 'Sales') {
                                   echo "
                                     <div class='sales_opt'>
-                                      <a class='btn btn-info login_opt_btn' href='view_customers.php'>View<br>Customer</a>
-                                      <a class='btn btn-info login_opt_btn' href='used_vehicles.php'>View<br>Vehicle</a>
                                       <a class='btn btn-info login_opt_btn' href='view_staff.php'>View<br>Staff</a>
+                                      <a class='btn btn-info login_opt_btn' href='used_vehicles.php'>View<br>Vehicle</a>
+                                      <a class='btn btn-info login_opt_btn' href='view_customers.php'>View<br>Customer</a>
                                       <a class='btn btn-success login_opt_logout_btn' href='add_sale.php'>Make a Sale</a>
                                       <br><br>
-                                      <a class='btn btn-primary login_opt_btn' href='add_customer.php'>Add<br>Customer</a>
                                       <a class='btn btn-primary login_opt_btn' href='add_car.php'>Add<br>Vehicle</a>
+                                      <a class='btn btn-primary login_opt_btn' href='add_customer.php'>Add<br>Customer</a>
                                       <a class='btn btn-warning login_opt_logout_btn' href='logout.php'>Log Out</a>
                                       </div>
                                   ";

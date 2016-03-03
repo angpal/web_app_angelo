@@ -2,50 +2,6 @@
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access = "";
-if ($_POST) {
-  
-//$aa = $_POST["password"];
-//$req_password = "admin";
-
-//$aa = $_POST["security_lev"];
-  
-//echo $req_password . $password;
-$username = test_input($_POST['username']);
-$password = md5($_POST['password']);
-
-include('connect.php');
-
-$query = "SELECT * FROM `staff` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
-
-$result = mysqli_query($con, $query);
-
-
-//Below 1st line: confirm if username and password exist, go to next line
-//Below 2nd line: confirm if entered password is the same as 
-//                the required password to access page
-  
-    if (mysqli_num_rows($result)==1) {
-    
-        while ($row = mysqli_fetch_assoc($result)) {
-
-        $_SESSION['security_lev'] = $row['security_lev'];
-
-        }
-
-    } else {
-      $message = "<p>Incorrect Username or Password</p>";
-    }
-
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-
 
 
 ?>
@@ -128,7 +84,7 @@ function test_input($data) {
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
@@ -159,7 +115,7 @@ function test_input($data) {
 
               <div class= "col-md-offset-3 col-md-8 ">
 
-              <h1>View STAFF Details</h1>
+              <h1>View <span class="emp_active">ACTIVE </span>STAFF Details</h1>
               <br><br>
 
                             <?php
@@ -170,9 +126,10 @@ function test_input($data) {
                                         echo "<div class='adm_opt'>
                                           <a class='btn btn-primary staff_btns' href='add_staff.php'>Add<br>Staff</a>
                                           <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
-                                          <a class='btn btn-primary staff_btns' href='add_customer'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
+                                          <a class='btn btn-info past_staff_btn' href='view_past_staff.php'>View PAST<br>Staff</a>
                                           <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
                                           <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
                                           <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
@@ -190,7 +147,7 @@ function test_input($data) {
                                           <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
-                                          <a class='btn btn-primary staff_btns' href='add_customer'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
                                           <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
                                           <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
                                         </div>";
@@ -223,7 +180,7 @@ function test_input($data) {
 
                                 include('connect.php');
 
-                                $query = "SELECT * FROM `staff` ";
+                                $query = "SELECT * FROM `staff` WHERE `status` = 'Active'";
 
 
                                 $result = mysqli_query($con, $query);
@@ -237,6 +194,7 @@ function test_input($data) {
 
                                         echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
                                           echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
+                                          echo "<h4>Emplyment Status: <small>" . $row['status'] . "</small></h4>";
                                           echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
                                           echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
                                           echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";

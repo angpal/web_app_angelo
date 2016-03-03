@@ -86,7 +86,7 @@ $success = "";
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
@@ -97,8 +97,6 @@ $success = "";
         <li><a href="../pages/contact.html">Contact</a></li>
         <li class="active"><a href="#" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
       </ul>
-      
-
     
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -148,9 +146,7 @@ $success = "";
                                           <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
                                         </div>";
                                     } 
-                                     
                                 }
-
                             ?>
 
                   <br><br>
@@ -163,64 +159,34 @@ $success = "";
 
                           <div class="row">
                             <article class="inner-main-content">
-                                  
-                                  <div class="row">
-                                    <div class="col-xs-11">
-                                      <form role="form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "POST">
-                                        <div class="form-group">
-                                          <label for="surname">Surname:</label>
-                                          <input type="text" class="form-control" id="surname" name="surname">
-                                        </div>
-                                  
-                                        <div class="form-group">
-                                          <button type="submit" class="btn btn-default">Submit</button>
-                                        </div>
-                                      </form>
-                                    </div>
-                                  </div>
+
+                                        <?php
 
 
+                                            include('connect.php');
+
+                                            $query = "SELECT * FROM `customers` ";
 
 
+                                            $result = mysqli_query($con, $query);
 
-<?php
-
-if ($_POST) {
-
-  $surname = "";
-
-  $surname = $_POST['surname'];
+                                            while ($row = mysqli_fetch_assoc($result)) {
 
 
-include('connect.php');
+                                              echo "<div class='well'>";
+                                              echo "<h4>Customer ID: <small>" . $row['customer_id'] . "</small></h4>";
+                                              echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
+                                              echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
+                                              echo "<h4>Street: <small>" . $row['street'] . "</small></h4>";
+                                              echo "<h4>City: <small>" . $row['city'] . "</small></h4>";
+                                              echo "<h4>State: <small>" . $row['state'] . "</small></h4>";
+                                              echo "<h4>Postcode: <small>" . $row['postcode'] . "</small></h4>";
+                                              echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
+                                              echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
+                                              echo "</div>";
 
-$query = "SELECT * FROM `customers` WHERE `surname` LIKE '%$surname%'";
-
-
-$result = mysqli_query($con, $query);
-
-  while ($row = mysqli_fetch_assoc($result)) {
-
-
-    echo "<div class='well'>";
-    echo "<h4>Customer ID: <small>" . $row['customer_id'] . "</small></h4>";
-    echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
-    echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
-    echo "<h4>Street: <small>" . $row['street'] . "</small></h4>";
-    echo "<h4>City: <small>" . $row['city'] . "</small></h4>";
-    echo "<h4>State: <small>" . $row['state'] . "</small></h4>";
-    echo "<h4>Postcode: <small>" . $row['postcode'] . "</small></h4>";
-    echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
-    echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
-    echo "</div>";
-
-  }
-}
-
-
-
-
-?>
+                                            }
+                                        ?>
 
 
 

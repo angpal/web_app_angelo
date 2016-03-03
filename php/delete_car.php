@@ -2,48 +2,37 @@
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access =$success = "";
+$success = "";
+
 if ($_POST) {
-  
-//$aa = $_POST["password"];
-//$req_password = "admin";
 
-//$aa = $_POST["security_lev"];
-  
-//echo $req_password . $password;
-$username = test_input($_POST['username']);
-$password = md5($_POST['password']);
+  $stock_no = "";
 
-include('connect.php');
-
-$query = "SELECT * FROM `user_login` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
-
-$result = mysqli_query($con, $query);
+  $stock_no = $_POST['stock_no'];
 
 
-//Below 1st line: confirm if username and password exist, go to next line
-//Below 2nd line: confirm if entered password is the same as 
-//                the required password to access page
-  
-    if (mysqli_num_rows($result)==1) {
-    
-        while ($row = mysqli_fetch_assoc($result)) {
+  include('connect.php');
 
-        $_SESSION['security_lev'] = $row['security_lev'];
 
-        }
 
-    } else {
-      $message = "<p>Incorrect Username or Password</p>";
-    }
 
-}
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+
+$query2 = "UPDATE `car` SET `availability` = 'Removed' WHERE `car`.`stock_no` = $stock_no;";
+
+
+$result2 = mysqli_query($con, $query2);
+
+  if ($result2) {
+    $success = "You have successfully removed Stock No." . "$stock_no" . " from the database!";
+  } else {
+    $error = "The availability status was NOT changed";
+  }
+
+
+
+
+
 }
 
 
@@ -127,7 +116,7 @@ function test_input($data) {
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
