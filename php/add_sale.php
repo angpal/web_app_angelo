@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 
@@ -15,7 +16,8 @@ if ($_POST) {
 include('connect.php');
 
 
-$query = "INSERT INTO `sale` (`receipt_no`, `customer_id`, `stock_no`, `staff_id`, `date`) VALUES (NULL, '$customer_id', '$stock_no', '$staff_id', CURRENT_TIMESTAMP);";
+$query = "INSERT INTO `sale` (`receipt_no`, `customer_id`, `stock_no`, `staff_id`, `date`) 
+VALUES (NULL, '$customer_id', '$stock_no', '$staff_id', CURRENT_TIMESTAMP);";
 
 
 $result = mysqli_query($con, $query);
@@ -88,11 +90,7 @@ $result2 = mysqli_query($con, $query2);
               echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
           }
     ?>
-     <?php  
-          if (!isset($_SESSION['security_lev'])){
-              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
-          }
-    ?>
+  
 
     <header>
     <div class="row">
@@ -105,12 +103,13 @@ $result2 = mysqli_query($con, $query2);
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -177,6 +176,7 @@ $result2 = mysqli_query($con, $query2);
 
               <h1>Add SALE of a Used Vehicle</h1>
               <br>
+              <h2><?php echo $success . $error ?></h2>
 
                             <?php
 
@@ -218,7 +218,7 @@ $result2 = mysqli_query($con, $query2);
 
                   <br><br>
 
-                  <?php echo $success . $error ?>
+                  
 
                   <div class="row">
                       <div class="col-xs-12">

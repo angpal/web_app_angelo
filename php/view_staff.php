@@ -59,12 +59,13 @@ $message = "<p></p>";
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -172,66 +173,47 @@ $message = "<p></p>";
                         <div class="col-xs-12">
                           <article class="inner-main-content">
 
+     
+                          <div class='row'>
 
-                            
-                              <div class='row'>
+                              <?php
 
-                                <?php
+                                  include('connect.php');
 
-                                include('connect.php');
-
-                                $query = "SELECT * FROM `staff` WHERE `status` = 'Active'";
+                                  $query = "SELECT * FROM `staff` WHERE `status` = 'Active'";
 
 
-                                $result = mysqli_query($con, $query);
+                                  $result = mysqli_query($con, $query);
 
-                                  while ($row = mysqli_fetch_assoc($result)) {
+                                      while ($row = mysqli_fetch_assoc($result)) {
 
-                                      echo "<div class='col-xs-12 col-md-6 shadow'>";
-                                        echo "<div class='col-xs-6 col-md-6 staff_image_box' style='padding: 50px 1%'>";
-                                          echo "<img src='../images/staff_" . $row['staff_id'] . ".png' alt='logo' class='img_staff img-responsive'>";
-                                        echo "</div>";
+                                          echo "<div class='col-xs-12 col-md-6 shadow'>";
+                                            echo "<div class='col-xs-6 col-md-6 staff_image_box' style='padding: 50px 1%'>";
+                                              echo "<img src='../images/staff_" . $row['staff_id'] . ".png' alt='logo' class='img_staff img-responsive'>";
+                                            echo "</div>";
 
-                                        echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
-                                          echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
-                                          echo "<h4>Emplyment Status: <small>" . $row['status'] . "</small></h4>";
-                                          echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
-                                          echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
-                                          echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
-                                          echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
-                                          echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
-                                          echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
-                                        echo "</div>";
-                                      echo "</div>";
-                                  }
+                                            echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
+                                              echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
+                                              echo "<h4>Emplyment Status: <small>" . $row['status'] . "</small></h4>";
+                                              echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
+                                              echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
+                                              echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
+                                              echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
+                                              echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
+                                              echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
+                                            echo "</div>";
+                                          echo "</div>";
+                                      }
 
-                                ?>
+                                  ?>
 
                               </div>
                            
-
                           </article>
                         </div>
                       </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               </div>
-
-
-
 
             </div>
 

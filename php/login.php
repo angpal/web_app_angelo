@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $message = "<p></p>";
@@ -16,10 +17,10 @@ $password = md5($_POST['password']);
 
 include('connect.php');
 
-$query = "SELECT * FROM `staff` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
+$query = "SELECT * FROM `staff` WHERE `username` = '$username' AND `password` = 
+'$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
 
 $result = mysqli_query($con, $query);
-
 
 //Below 1st line: confirm if username and password exist, go to next line
 //Below 2nd line: confirm if entered password is the same as 
@@ -32,11 +33,9 @@ $result = mysqli_query($con, $query);
         $_SESSION['security_lev'] = $row['security_lev'];
 
         }
-
     } else {
-      $message = "<p>Incorrect Username or Password</p>";
+      $message = "<p> You have entered an incorrect Username or Password. Please try again.</p>";
     }
-
 }
 
 function test_input($data) {
@@ -102,12 +101,13 @@ function test_input($data) {
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -131,7 +131,7 @@ function test_input($data) {
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
-        <li><a href="../pages/specials.html">Specials</a></li>
+        <li><a href="specials.php">Specials</a></li>
         <li><a href="used_vehicles.php">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
@@ -178,11 +178,8 @@ function test_input($data) {
                           <input type='submit' name='submit' class='btn btn-success'></input>
                   </form> ";
 
-
               } 
-                       
-           
-
+                     
                       if (isset($_SESSION['security_lev'])) {
 
                        
@@ -225,7 +222,7 @@ function test_input($data) {
                         
                       }
 
-                          echo $message;    
+                          echo "<h3 style='color:red;'>" . $message . "</h3>";    
 
           ?>
         

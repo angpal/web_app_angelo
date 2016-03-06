@@ -1,36 +1,33 @@
+
 <?php
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access = $success =  "";
+$username = $password = $security_lev =  "";
 
 
 $success = "";
 
 if ($_POST) {
 
-  $staff_id = "";
+    $staff_id = "";
 
-  $staff_id = $_POST['staff_id'];
-
-
-  include('connect.php');
+    $staff_id = $_POST['staff_id'];
 
 
+    include('connect.php');
 
 
+    $query2 = "UPDATE `staff` SET `status` = 'Terminated' WHERE `staff`.`staff_id` = $staff_id;";
 
 
-$query2 = "UPDATE `staff` SET `status` = 'Terminated' WHERE `staff`.`staff_id` = $staff_id;";
+    $result2 = mysqli_query($con, $query2);
 
-
-$result2 = mysqli_query($con, $query2);
-
-  if ($result2) {
-    $success = "You have successfully removed Staff ID. " . "$staff_id" . " from the database!";
-  } else {
-    $error = "The availability status was NOT changed";
-  }
+    if ($result2) {
+      $success = "You have successfully removed Staff ID. " . "$staff_id" . " from the database!";
+    } else {
+      $error = "The availability status was NOT changed";
+    }
 
 }
 
@@ -56,7 +53,7 @@ $result2 = mysqli_query($con, $query2);
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <link rel="stylesheet" type="text/css" href="../css/custom.css">
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -90,12 +87,13 @@ $result2 = mysqli_query($con, $query2);
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+$message = "<p></p>";
+
+$username = $password = $security_lev = $aa = $access = $req_access = "";
+
+$success = "";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -51,12 +61,13 @@
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -79,12 +90,12 @@
     <div class="collapse navbar-collapse nav_font" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav ">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="../pages/about.html">About</a></li>
         <li><a href="specials.html">Specials</a></li>
         <li class="active"><a href="#">Used Vehicles</a></li>
-        <li><a href="finance.html">Finance</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="../pages/finance.html">Finance</a></li>
+        <li><a href="../pages/testimonials.html">Testimonials</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
         <li><a href="login.php" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
       </ul>
       
@@ -100,48 +111,85 @@
   <div class="col-xs-10">
     <article class="inner-main-content">
       <h1>USED VEHICLES</h1>
+                            <?php
 
+                                if (isset($_SESSION['security_lev'])) {
 
-      
+                                    if ($_SESSION['security_lev'] == 'Admin') {
+                                        echo "<div class='adm_opt'>
+                                          <a class='btn btn-primary staff_btns' href='add_staff.php'>Add<br>Staff</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='#'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
+                                          <br><br>
+                                          <a class='btn btn-danger staff_btns' href='delete_staff.php'>Delete<br>Staff</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_car.php'>Delete<br>Vehicle</a>
+                                          <a class='btn btn-danger staff_btns' href='delete_customer.php'>Delete<br>Customer</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                        </div>";
+                                    } 
+                                    if ($_SESSION['security_lev'] == 'Sales') {
+                                        echo "<div class='sales_opt'>
+                                          <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customer</a>
+                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
+                                          <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
+                                          <br><br>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
+                                          <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
+                                        </div>";
+                                    } 
+                                     
+                                }
+
+                            ?>     
+
+      <br><br>
+
         <div class='row'>
 
-          <?php
+            <?php
 
-          include('connect.php');
+            include('connect.php');
 
-          $query = "SELECT * FROM `car` WHERE `availability` = 'In Stock'";
+            $query = "SELECT * FROM `car` WHERE `availability` = 'In Stock'";
 
 
-          $result = mysqli_query($con, $query);
+            $result = mysqli_query($con, $query);
 
-            while ($row = mysqli_fetch_assoc($result)) {
+                while ($row = mysqli_fetch_assoc($result)) {
 
-              echo "<div class='col-xs-12 col-md-6 shadow'>";
-                echo "<div class='col-xs-6 col-md-6 car_image_box' style='padding: 50px 1%'>";
-                  echo "<img src='../images/car_" . $row['stock_no'] . ".png' alt='logo' class='img_used_car img-responsive'>";
-                echo "</div>";
+                    echo "<div class='col-xs-12 col-md-6 shadow'>";
+                      echo "<div class='col-xs-6 col-md-6 car_image_box' style='padding: 50px 1%'>";
+                          echo "<img src='../images/car_" . $row['stock_no'] . ".png' alt='logo' class='img_used_car img-responsive'>";
+                      echo "</div>";
 
-                echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
-                  echo "<h4>Stock No: <small>" . $row['stock_no'] . "</small></h4>";
-                  echo "<h4>Availability: <small>" . $row['availability'] . "</small></h4>";
-                  echo "<h4>Manufacturer: <small>" . $row['manufacturer_id'] . "</small></h4>";
-                  echo "<h4>Category: <small>" . $row['category_id'] . "</small></h4>";
-                  echo "<h4>Model: <small>" . $row['model'] . "</small></h4>";
-                  echo "<h4>Year: <small>" . $row['year'] . "</small></h4>";
-                  echo "<h4>Price: <small>" . $row['price'] . "</small></h4>";
-                  echo "<h4>Kilometers No.: <small>" . $row['kilometers'] . "</small></h4>";
-                  echo "<h4>Colour: <small>" . $row['colour'] . "</small></h4>";
-                  echo "<h4>Registration: <small>" . $row['registration'] . "</small></h4>";
-                  echo "<h4>VIN No.: <small>" . $row['vin'] . "</small></h4>";
-                  echo "<h4>Cylinders: <small>" . $row['cylinders'] . "</small></h4>";
-                  echo "<h4>Fuel: <small>" . $row['fuel'] . "</small></h4>";
-                  echo "<h4>Transmission: <small>" . $row['transmission'] . "</small></h4>";
-                  echo "<h4>Specials: <small>" . $row['specials'] . "</small></h4>";
-                echo "</div>";
-              echo "</div>";
-            }
+                      echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
+                          echo "<h4>Stock No: <small>" . $row['stock_no'] . "</small></h4>";
+                          echo "<h4>Availability: <small>" . $row['availability'] . "</small></h4>";
+                          echo "<h4>Manufacturer: <small>" . $row['manufacturer_id'] . "</small></h4>";
+                          echo "<h4>Category: <small>" . $row['category_id'] . "</small></h4>";
+                          echo "<h4>Model: <small>" . $row['model'] . "</small></h4>";
+                          echo "<h4>Year: <small>" . $row['year'] . "</small></h4>";
+                          echo "<h4>Price: <small>" . $row['price'] . "</small></h4>";
+                          echo "<h4>Kilometers No.: <small>" . $row['kilometers'] . "</small></h4>";
+                          echo "<h4>Colour: <small>" . $row['colour'] . "</small></h4>";
+                          echo "<h4>Registration: <small>" . $row['registration'] . "</small></h4>";
+                          echo "<h4>VIN No.: <small>" . $row['vin'] . "</small></h4>";
+                          echo "<h4>Cylinders: <small>" . $row['cylinders'] . "</small></h4>";
+                          echo "<h4>Fuel: <small>" . $row['fuel'] . "</small></h4>";
+                          echo "<h4>Transmission: <small>" . $row['transmission'] . "</small></h4>";
+                          echo "<h4>Specials: <small>" . $row['specials'] . "</small></h4>";
+                      echo "</div>";
+                    echo "</div>";
+                }
 
-          ?>
+            ?>
 
         </div>
      

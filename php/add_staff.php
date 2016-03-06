@@ -1,17 +1,19 @@
+
 <?php
 session_start();
 $message = "<p></p>";
 
 
 
-$success = "";
+$success = $error = "";
 
 if ($_POST) {
 
-  $firstname = $lastname = $street = $city = $state = $postcode = $phone_no = $email = $username = $password = $security_lev = "";
+  $firstname = $surname =$status = $street = $city = $state = $postcode = $phone_no = $email = $username = $password = $security_lev = "";
 
   $firstname = $_POST['firstname'];
-  $lastname = $_POST['surname'];
+  $surname = $_POST['surname'];
+  $status = $_POST['status'];
   $email = $_POST['email'];
   $phone_no = $_POST['phone_no'];
   $username = $_POST['username'];
@@ -19,15 +21,27 @@ if ($_POST) {
   $security_lev = $_POST['security_lev'];
   
 
+
 include('connect.php');
 
-$query = "INSERT INTO `staff` (`staff_id`, `firstname`, `surname`, `email`, `phone`, `username`, `password`, `security_lev`) VALUES (NULL, '$firstname', '$lastname', '$email', '$phone_no', '$username', $password', '$security_lev');";
+// INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) 
+VALUES (NULL, 'Active', 'Sally', 'Smith', 'smiths@wca.com.au', '0409456289', 'smiths', MD5('smiths'), 'Admin');
+
+$query = "INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) 
+VALUES (NULL, '$status', '$firstname', '$surname', '$email', '$phone_no', '$username', MD5('$password'), '$security_lev');";
+
+
 
 $result = mysqli_query($con, $query);
 
+
   if ($result) {
-    $success = "You have successfully added " . $firstname . " " . $lastname . " to the database!";
-  }
+
+    $success = "You have successfully added " . $firstname . " " . $surname . " to the database!";
+
+
+
+  } 
 }
 
 
@@ -88,12 +102,13 @@ $result = mysqli_query($con, $query);
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -158,8 +173,9 @@ $result = mysqli_query($con, $query);
 
               <div class= "col-md-offset-3 col-md-8 ">
 
-              <h1>Add Customers</h1>
-              <br><br>
+              <h1>Add Staff Member</h1>
+              <br>
+              <h2><?php echo $success; ?></h2>
 
                             <?php
 
@@ -206,11 +222,12 @@ $result = mysqli_query($con, $query);
                   <div class="row">
                       <div class="col-xs-12">
 
-                          <form role="form">
+                          <form role="form" method="POST" action="">
                               <div class="form-group">
                                   <label for="firstname">First Name:</label>
                                   <input type="text" class="form-control" id="firstname" name="firstname">
                               </div>
+
 
                               <div class="form-group">
                                   <label for="surname">Surname:</label>
@@ -218,11 +235,17 @@ $result = mysqli_query($con, $query);
                               </div>
 
 
+                              <div class="form-group">
+                                  <label for="status">Employment Status:</label>
+                                  <input type="text" class="form-control" id="status" name="status">
+                              </div>
+
 
                               <div class="form-group">
                                   <label for="phone_no">Phone Number:</label>
                                   <input type="text" class="form-control" id="phone_no" name="phone_no">
                               </div>
+
 
                               <div class="form-group">
                                   <label for="email">Email:</label>
@@ -230,23 +253,23 @@ $result = mysqli_query($con, $query);
                               </div>
 
 
-
-
                               <div class="form-group">
                                   <label for="username">Username:</label>
                                   <input type="text" class="form-control" id="username" name="username">
                               </div>
 
+
                               <div class="form-group">
                                   <label for="password">Password:</label>
-                                  <input type="text" class="form-control" id="password" name="password">
+                                  <input type="password" class="form-control" id="password" name="password">
                               </div>
+
 
                               <div class="form-group">
                                   <label for="text">Security Level:</label>
                                   <input type="text" class="form-control" id="security_lev" name="security_lev">
                               </div>
-
+                              <? php echo $firstname . $surname . $status . $phone_no . $email . $username . $password . $security_lev; ?>
                               <button type="submit" class="btn btn-default">Submit</button>
 
                           </form>

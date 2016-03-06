@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $message = "<p></p>";
@@ -8,7 +9,8 @@ $success = "";
 
 if ($_POST) {
 
-  $availability = $manufacturer_id = $category_id = $model = $year = $price = $kilometers = $colour = $registration = $vin = $cylinders = $fuel = $transmission = $specials = "";
+  $availability = $manufacturer_id = $category_id = $model = $year = $price = $kilometers = $colour = $registration = $vin = 
+  $cylinders = $fuel = $transmission = $specials = "";
 
   $availability = $_POST['availability'];
   $manufacturer_id = $_POST['manufacturer_id'];
@@ -29,8 +31,11 @@ if ($_POST) {
 
 include('connect.php');
 
-$query = "INSERT INTO `car` (`stock_no`, `availability`, `manufacturer_id`, `category_id`, `model`, `year`, `price`, `kilometers`, `colour`, `registration`, `vin`, `cylinders`, `fuel`, `transmission`, `specials`) 
-VALUES (NULL, '$availability', '$manufacturer_id', '$category_id', '$model', '$year', '$price', '$kilometers', '$colour', '$registration', '$vin', '$cylinders', '$fuel', '$transmission', '$specials');";
+$query = "INSERT INTO `car` (`stock_no`, `availability`, `manufacturer_id`, `category_id`, `model`, `year`, `price`, 
+  `kilometers`, `colour`, `registration`, `vin`, `cylinders`, `fuel`, `transmission`, `specials`) 
+VALUES (NULL, '$availability', '$manufacturer_id', '$category_id', '$model', '$year', '$price', '$kilometers', 
+  '$colour', '$registration', '$vin', '$cylinders', '$fuel', '$transmission', '$specials');";
+
 
 $result = mysqli_query($con, $query);
 
@@ -96,12 +101,13 @@ $result = mysqli_query($con, $query);
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -154,7 +160,7 @@ $result = mysqli_query($con, $query);
 
               <h1>Add a Vehicle to the Database</h1>
               <br>
-              <h2><?php echo $success; ?></h2>
+              <h2><?php echo $success . $error; ?></h2>
 
                       <?php
 

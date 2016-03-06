@@ -30,7 +30,7 @@
   <body>
 
 
-    <a href="php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
+    <a href="../php/login.php" class="btn btn-default login-btn hidden-xs" >Employee Login</a>
 
     <header>
     <div class="row">
@@ -43,12 +43,13 @@
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -72,8 +73,8 @@
       <ul class="nav navbar-nav">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="specials.html">Specials</a></li>
-        <li><a href="used_vehicles.php">Used Vehicles</a></li>
+        <li><a href="../php/specials.php">Specials</a></li>
+        <li><a href="../php/used_vehicles.php">Used Vehicles</a></li>
         <li class="active"><a href="#">Finance</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -87,13 +88,164 @@
 </nav>
 
 
-<div class="row">
- <div class="col-xs-12">
-    <article class="inner-main-content">
-      <h1>Main Content Area - ABOUT</h1>
-    </article>
-  </div>
-</div>
+<!-- ********* MAIN CONTENT AREA *********** -->
+    <div class="row">
+
+        <div class="col-sm-offset-1 col-md-offset-1 col-sm-6 col-md-7 main_con">
+
+            <div class=" col-sm-12 col-md-8 inner-main-top">
+                <div class="page_title">Finance Made Easy</div>
+                <br>
+                 
+                <h2>Car Finance</h2>
+ 
+                <span class="main_text">Here at West Coast Auto, our team have over 20 years of experience in matching our Perth customers with the right car finance packages to suit their personal budget and lifestyle requirements. Through our partnership with Esanda, we offer a range of car finance options, such as:</span>
+                <br>
+                <span class="main_text">&nbsp;&nbsp;&nbsp;&nbsp;* Consumer loan finance<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;* Leases</span>
+                <br><br>
+ 
+                <h2>Car Insurance</h2>
+ 
+                <span class="main_text">Whether you’re driving around the streets of Perth or heading off the beaten track, our car insurance solutions can be tailored to suit your needs. Through our partnership with Avea, we’re able to offer a number of car insurance solutions to suit your budget and priorities, including:</span>
+                <br>
+                <span class="main_text">&nbsp;&nbsp;&nbsp;&nbsp;* Comprehensive cover — which not only reimburses you for damage, but also for storm or hail damage, and emergency repairs<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;* Third party property damage, fire and theft<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;* Third party property damage.
+                <br><br>
+
+                <span class="main_text">For more information about our car finance or insurance options, or to start your application, please don’t hesitate to Contact a friendly member of our team today.</span>
+                <br><br>
+
+                <a class='btn btn-success used_cars_link_btn' href='contact.php'>Enquire Here</a>
+                <br><br>
+
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-4 col-md-3 side_bar">
+
+      <!-- =====================================================================================================
+      ===  The following modified script was sourced from: http://www.hypergurl.com/car-loan-calculator.html ===
+      ========================================================================================================== -->
+              <form action="POST" name="myform">
+                <table style="border:4px solid #000; cell-padding-left:25px; background-color:#66ce2d;">
+                  <tr> 
+                    <td align="center" colspan="2" style="padding-top: 10px;"> 
+                      <script
+                   language="JavaScript"><!--
+        function CarLoanCalculator()
+        {
+          form = document.myform
+          LoanAmount= form.LoanAmount.value
+            
+          DownPayment= "0"
+          AnnualInterestRate = form.InterestRate.value/100
+          Years= form.NumberOfYears.value
+            MonthRate=AnnualInterestRate/12
+          NumPayments=Years*12
+          Prin=LoanAmount-DownPayment
+          
+          MonthPayment=Math.floor((Prin*MonthRate)/(1-Math.pow((1+MonthRate),(-1*NumPayments)))*100)/100
+            form.NumberOfPayments.value=NumPayments
+          form.MonthlyPayment.value=MonthPayment
+        }
+                // --></script>
+                      <font color="#000"
+                    size="5" font-family="arial narrow" ><b>Car Loan Calculator</b> <br>
+                      Enter Your Details &amp; Click the Calculate Button</font></td>
+                  </tr>
+                  <tr> 
+                    <td style="padding-left: 5px;"> 
+                      <table style="border:none; padding:5px;">
+                        <tr> 
+                          <td style="border:none; padding:5px; text-align:right;"><font color="#000"
+                            size="3" font-family="arial narrow">Car Loan Amount $ </font></td>
+                          <td><font color="#000" size="3"
+                           font-family="arial narrow"> 
+                            <input type="text"
+                            size="10" name="LoanAmount" value="30000"
+                            onBlur="CarLoanCalculator()" onChange="CarLoanCalculator()">
+                            <br>
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td style="border:none; padding:5px; text-align:right;"><font color="#000"
+                            size="3" font-family="arial narrow">Annual Interest Rate </font></td>
+                          <td><font color="#000" size="3"
+                           font-family="arial narrow"> 
+                            <input type="text"
+                            size="3" name="InterestRate" value="7.0"
+                           onBlur="CarLoanCalculator()" onChange="CarLoanCalculator()">
+                            % <br>
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td style="border:none; padding:5px; text-align:right;"><font color="#000"
+                           size="3" font-family="arial narrow">Term of Car Loan </font></td>
+                          <td><font color="#000" size="3"
+                           font-family="arial narrow"> 
+                            <input type="text"
+                            size="3" name="NumberOfYears" value="4"
+                            onBlur="CarLoanCalculator()" onChange="CarLoanCalculator()">
+                            Years<br>
+                            </font></td>
+                          <td><font color="#000" size="3"
+                            font-family="arial narrow" style="margin-left:30px;"> 
+                            <input type="button"
+                            name="morgcal" value="Calculate"
+                           language="JavaScript" onClick="CarLoanCalculator()">
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td colspan="3"><font color="#000"></font></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td style="padding-left: 5px;"> 
+                      <table style="margin-top:45px; padding:15px; text-align:right;">
+                        <tr>  
+                          <td ><font color="#000"
+                            size="3" font-family="arial narrow" > Number of Car Payments </font></td>
+                          <td><font color="#000" size="3" font-family="arial narrow" > 
+                            <input type="text"
+                            size="7" name="NumberOfPayments">
+                            <br>
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td style="border:none; padding:5px; text-align:right;"><font color="#000"
+                            size="3" font-family="arial narrow">Monthly Payment $ </font></td>
+                          <td><font color="#000" size="3"
+                            font-family="arial narrow"> 
+                            <input type="text"
+                           size="7" name="MonthlyPayment">
+                            <br>
+                            </font></td>
+                        </tr>
+                        <tr> 
+                          <td align="center" colspan="2">&nbsp;</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+                <div align="center"></div>
+              </form>
+              <br>
+              <h4 style="font-size:17px; line-height:25px;"> NOTE:<br>The modified script (above) was sourced from:<br>http://www.hypergurl.com/car-loan-calculator.html </h4>
+        
+      <!-- ===== End of sourced script === -->  
+
+        </div>
+
+    </div>
+
+
 
 <footer class="navbar navbar-default ">
   <div class="col-md-6">

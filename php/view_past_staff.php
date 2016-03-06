@@ -59,12 +59,13 @@ $message = "<p></p>";
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -115,7 +116,7 @@ $message = "<p></p>";
 
               <div class= "col-md-offset-3 col-md-8 ">
 
-              <h1>View <span class="emp_active">ACTIVE </span>STAFF Details</h1>
+              <h1><small>You're viewing...</small> <span class="emp_active">TERMINATED </span>STAFF Details</h1>
               <br><br>
 
                             <?php
@@ -130,7 +131,7 @@ $message = "<p></p>";
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
                                           <a class='btn btn-info past_staff_btn' href='#'>View PAST<br>Staff</a>
-                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View ACTIVE<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View PRESENT<br>Staff</a>
                                           <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
                                           <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customers</a>
                                           <br><br>
@@ -174,40 +175,40 @@ $message = "<p></p>";
 
 
                             
-                              <div class='row'>
+                          <div class='row'>
 
-                                <?php
+                              <?php
 
-                                include('connect.php');
+                                  include('connect.php');
 
-                                $query = "SELECT * FROM `staff` WHERE `status` = 'Terminated'";
+                                  $query = "SELECT * FROM `staff` WHERE `status` = 'Terminated'";
 
 
-                                $result = mysqli_query($con, $query);
+                                  $result = mysqli_query($con, $query);
 
-                                  while ($row = mysqli_fetch_assoc($result)) {
+                                      while ($row = mysqli_fetch_assoc($result)) {
 
-                                      echo "<div class='col-xs-12 col-md-6 shadow'>";
-                                        echo "<div class='col-xs-6 col-md-6 staff_image_box' style='padding: 50px 1%'>";
-                                          echo "<img src='../images/staff_" . $row['staff_id'] . ".png' alt='logo' class='img_staff img-responsive'>";
-                                        echo "</div>";
+                                          echo "<div class='col-xs-12 col-md-6 shadow'>";
+                                            echo "<div class='col-xs-6 col-md-6 staff_image_box' style='padding: 50px 1%'>";
+                                              echo "<img src='../images/staff_" . $row['staff_id'] . ".png' alt='logo' class='img_staff img-responsive'>";
+                                            echo "</div>";
 
-                                        echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
-                                          echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
-                                          echo "<h4>Emplyment Status: <small>" . $row['status'] . "</small></h4>";
-                                          echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
-                                          echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
-                                          echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
-                                          echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
-                                          echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
-                                          echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
-                                        echo "</div>";
-                                      echo "</div>";
-                                  }
+                                            echo "<div class='col-xs-6 col-md-6 ' style='padding: 50px 1%'>";
+                                              echo "<h4>Staff ID: <small>" . $row['staff_id'] . "</small></h4>";
+                                              echo "<h4>Emplyment Status: <small>" . $row['status'] . "</small></h4>";
+                                              echo "<h4>Firstname: <small>" . $row['firstname'] . "</small></h4>";
+                                              echo "<h4>Surname: <small>" . $row['surname'] . "</small></h4>";
+                                              echo "<h4>Email: <small>" . $row['email'] . "</small></h4>";
+                                              echo "<h4>Phone No.: <small>" . $row['phone_no'] . "</small></h4>";
+                                              echo "<h4>Username: <small>" . $row['username'] . "</small></h4>";
+                                              echo "<h4>Security Level: <small>" . $row['security_lev'] . "</small></h4>";
+                                            echo "</div>";
+                                          echo "</div>";
+                                      }
 
-                                ?>
+                              ?>
 
-                              </div>
+                          </div>
                            
 
                           </article>

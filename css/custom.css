@@ -6,34 +6,138 @@
     dark green: #3eae00
     grey:  #575757
     black:  #2D2D2D
+
+    border: 1px red solid;
 */
-div{
-	min-height: 50px;
-}
+
+
 
 
 body {
 	/*background-color: green;*/
 	background: rgba(102, 206, 45, .4);
 }
- header {
+header {
  	clear: both;
- }
+}
 
- nav {
+nav {
  	padding-left: 4%;
- }
-
-
-
-
-
-
-
+}
 .logo {
 	margin-left:  auto;
 	margin-right: auto;
+	width: 75%;
+	max-width: 520px;
 	max-height: 200px;
+}
+
+
+
+
+
+/* ***************  index page *************** */
+
+/* ********  main content area  ******* */
+
+.main_con {
+	height: auto;
+	min-height: 500px;
+}
+.inner-main-top {
+	width: 91%;
+	height: auto;
+	padding-left: 5%;
+	padding-right: 5%;
+	min-height: 230px;
+}
+.inner-main-bottom {
+	width: 91%;
+	height: auto;
+	text-align: center;
+}
+.main_text {
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 600;
+}
+.page_title {
+	background-color: #000;
+	color: #fff;
+	font-size: 32px;
+	font-weight: 600;
+	text-align: center;
+}
+img.yard {
+	height: auto;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.used_cars_link_btn {
+	float: right;
+	margin-right: 5%;
+	margin-left: 2%;
+}
+.testmins {
+	background-color: #fff;
+}
+
+/* ********  side_bar content area  ******* */
+.side_bar {
+	min-height: 500px;
+	float: left;
+}
+.car_week {
+	width: 90%;
+	height: auto;
+}
+.c_o_t_w_1 {
+	color: #9f0618;
+	font-size: 18px;
+	font-weight: 600;
+}
+.c_o_t_w_2 {
+	color: #000;
+	font-size: 14px;
+}
+.c_o_t_w_3 {
+	color: #9f0618;
+	font-size: 14px;
+}
+.c_o_t_w_4 {
+	color: #000;
+	font-size: 16px;
+	font-weight: 600;
+}
+.contact_link_btn {
+	/*margin-top: -10px;*/
+	float: right;
+}
+
+
+.original_yard {
+	width: 45%;
+	height: auto;
+}
+figure {
+	float: right;
+}
+
+
+
+
+/* ********  report pages (php) content area  ******* */
+
+.login-btn {
+	float: right !important;
+	margin-right: 5%;
+	margin-left: 2%;
+}
+.logout_btn {
+	width: 10%;
+	margin-left: 2%;
+	font-size: 12pt;
 }
 
 .nav_font {
@@ -51,18 +155,8 @@ body {
 	width: 100%;
 	/*text-align:  center;*/
 }
-.login-btn {
-	float: right;
-	margin-right: 5%;
-	margin-left: 2%;
-}
-.login-btn {
-}
-.logout_btn {
-	width: 10%;
-	margin-left: 2%;
-	font-size: 12pt;
-}
+
+
 .logout_btn:hover {
 	opacity: 0.5;
 }
@@ -71,7 +165,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
-.adm_opt:hover {
+.adm_opt a:hover {
 	opacity: 0.5;
 }
 .staff_btns{
@@ -84,7 +178,7 @@ body {
 	white-space: normal;
 	opacity: 1;
 }
-.staff_btns:hover {
+.staff_btns a:hover {
 	opacity: 0.5;
 }
 
@@ -129,57 +223,15 @@ body {
 .contact-info {
 	margin-top: 24px;
 	font-size: 16px;
+	text-align: left !important;
 }
 
 
 
-/* main content area */
 
-.specail-font-size{
-font-size: 30px;
 
-}
 
-.inner-main-content {
-	min-height: 500px;
-}
-.inner-main-top {
-	width: auto;
-	padding-left: 5%;
-	min-height: 230px;
-}
-.inner-main-bottom {
-	min-height: 220px;
-	text-align: center;
-}
-.side_bar {
-	min-height: 500px;
-}
 
-.page_title {
-	background-color: #000;
-	color: #fff;
-	font-size: 32px;
-	font-weight: 600;
-	text-align: center;
-}
-.main_text {
-	font-size: 24px;
-	font-style: italic;
-	font-weight: 600;
-}
-.used_cars_link_btn {
-	float: right;
-	margin-right: 5%;
-	margin-left: 2%;
-}
-.contact_link_btn {
-	margin-top: -50px;
-}
-/*img.yard {
-	height: 100%;
-	width: auto;
-*/
 }
 .img_used_car {
 	margin-left:  auto;

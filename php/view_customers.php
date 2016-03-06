@@ -61,12 +61,13 @@ $success = "";
       </div>
       <div class="col-md-4 hidden-sm hidden-xs">
           <div class="contact-info">
-            <p<span class="glyphicon glyphicon-earphone"></span> Phone: &nbsp;XX-XXXX-XXXX </p> 
+            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;&nbsp;Phone: &nbsp;&nbsp;&nbsp;&nbsp;08 9415 1234 </p> 
 
-            <p<span class="glyphicon glyphicon-envelope"></span> Email: &nbsp;xx@xx.com</p> 
+            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;denisc@bigpond.com</p> 
 
-            <p<span class="glyphicon glyphicon-map-marker"></span>  Address: XXX Something St,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somewhere WA </p> 
-
+            <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;&nbsp;Address: &nbsp;375 Albany Hwy,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Victoria Park, Perth WA 6100</p> 
           </div>
       </div>
     </div>
@@ -141,7 +142,7 @@ $success = "";
                                           <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
-                                          <a class='btn btn-primary staff_btns' href='add_customers.php'>Add<br>Customer</a>
+                                          <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>
                                           <a class='btn btn-primary staff_btns' href='add_car.php'>Add<br>Vehicle</a>
                                           <a class='btn btn-warning logout_btn' href='logout.php'>Log Out</a>
                                         </div>";
@@ -196,6 +197,7 @@ $success = "";
                           </div>
                       </div>
                     </div>
+                    
               </div>
             </div>
         </div>
