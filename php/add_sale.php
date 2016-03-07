@@ -95,7 +95,7 @@ $result2 = mysqli_query($con, $query2);
     <header>
     <div class="row">
       <div class="col-md-4">
-          <img src="../images/west_coast_auto_logo.png" alt="logo" class="logo img-responsive">
+          <img src="../images/west_coast_auto_logo.png" alt="Company logo" class="logo img-responsive">
       </div>  
 
       <div class="col-md-4 hidden-sm hidden-xs">

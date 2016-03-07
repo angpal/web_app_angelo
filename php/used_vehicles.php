@@ -4,7 +4,7 @@ $message = "<p></p>";
 
 $username = $password = $security_lev = $aa = $access = $req_access = "";
 
-$success = "";
+$success = $error = "";
 
 ?>
 
@@ -91,12 +91,12 @@ $success = "";
       <ul class="nav navbar-nav ">
         <li><a href="../index.html">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="../pages/about.html">About</a></li>
-        <li><a href="specials.html">Specials</a></li>
+        <li><a href="../pages/specials.html">Specials</a></li>
         <li class="active"><a href="#">Used Vehicles</a></li>
         <li><a href="../pages/finance.html">Finance</a></li>
         <li><a href="../pages/testimonials.html">Testimonials</a></li>
         <li><a href="../pages/contact.html">Contact</a></li>
-        <li><a href="login.php" class="hidden-sm hidden-md hidden-lg" >Employee Login</a></li>
+        <li><a href="login.php" class="hidden-sm hidden-md hidden-lg">Employee Login</a></li>
       </ul>
       
 
@@ -135,8 +135,8 @@ $success = "";
                                     if ($_SESSION['security_lev'] == 'Sales') {
                                         echo "<div class='sales_opt'>
                                           <a class='btn btn-info staff_btns' href='view_customers.php'>View<br>Customer</a>
-                                          <a class='btn btn-info staff_btns' href='used_vehicles.php'>View<br>Vehicle</a>
-                                          <a class='btn btn-info staff_btns' href='#'>View<br>Staff</a>
+                                          <a class='btn btn-info staff_btns' href='#'>View<br>Vehicle</a>
+                                          <a class='btn btn-info staff_btns' href='view_staff.php'>View<br>Staff</a>
                                           <a class='btn btn-success staff_btns' href='add_sale.php'>Make a Sale</a>
                                           <br><br>
                                           <a class='btn btn-primary staff_btns' href='add_customer.php'>Add<br>Customer</a>

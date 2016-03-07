@@ -5,7 +5,7 @@ $message = "<p></p>";
 
 $username = $password = $security_lev = $aa = $access = $req_access = "";
 
-$success = "";
+$success = $error = "";
 
 if ($_POST) {
 
@@ -85,7 +85,7 @@ $result = mysqli_query($con, $query);
 
     <?php  
           if (!isset($_SESSION['security_lev'])){
-              echo " <a href='php/login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
+              echo " <a href='login.php' class='btn btn-default login-btn hidden-xs' >Employee Login</a>";
           }
     ?>
    
