@@ -15,10 +15,9 @@ if ($_POST) {
   include('connect.php');
 
 
-$query2 = "UPDATE `car` SET `availability` = 'Removed' WHERE `car`.`stock_no` = $stock_no;";
+  $query2 = "UPDATE `car` SET `availability` = 'Removed' WHERE `car`.`stock_no` = $stock_no;";
 
-
-$result2 = mysqli_query($con, $query2);
+  $result2 = mysqli_query($con, $query2);
 
   if ($result2) {
     $success = "You have successfully removed Stock No." . "$stock_no" . " from the database!";

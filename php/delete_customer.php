@@ -1,49 +1,34 @@
+
 <?php
 session_start();
 $message = "<p></p>";
 
-$username = $password = $security_lev = $aa = $access = $req_access = $success = "";
+$username = $password = $security_lev =  "";
+
+
+$success = "";
+
 if ($_POST) {
-  
-//$aa = $_POST["password"];
-//$req_password = "admin";
 
-//$aa = $_POST["security_lev"];
-  
-//echo $req_password . $password;
-$username = test_input($_POST['username']);
-$password = md5($_POST['password']);
+    $customer_id = "";
 
-include('connect.php');
-
-$query = "SELECT * FROM `user_login` WHERE `username` = '$username' AND `password` = '$password' AND (`security_lev` = 'admin' OR `security_lev` = 'sales')";
-
-$result = mysqli_query($con, $query);
+    $customer_id = $_POST['customer_id'];
 
 
-//Below 1st line: confirm if username and password exist, go to next line
-//Below 2nd line: confirm if entered password is the same as 
-//                the required password to access page
-  
-    if (mysqli_num_rows($result)==1) {
-    
-        while ($row = mysqli_fetch_assoc($result)) {
+    include('connect.php');
 
-        $_SESSION['security_lev'] = $row['security_lev'];
 
-        }
+    $query2 = "DELETE FROM `customers` WHERE `customer_id` = '$customer_id' ";
 
+
+    $result2 = mysqli_query($con, $query2);
+
+    if ($result2) {
+      $success = "You have successfully removed customer ID. " . "$customer_id" . " from the database!";
     } else {
-      $message = "<p>Incorrect Username or Password</p>";
+      $error = "The customer's status was NOT changed";
     }
 
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
 }
 
 

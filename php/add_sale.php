@@ -4,46 +4,37 @@ session_start();
 
 $success = $error = "";
 
-if ($_POST) {
+    if ($_POST) {
 
-  $staff_id = $customer_id = $stock_id = "";
+      $staff_id = $customer_id = $stock_id = "";
 
-  $staff_id = $_POST['staff_id'];
-  $customer_id = $_POST['customer_id'];
-  $stock_no = $_POST['stock_no'];
-
-
-include('connect.php');
+      $staff_id = $_POST['staff_id'];
+      $customer_id = $_POST['customer_id'];
+      $stock_no = $_POST['stock_no'];
 
 
-$query = "INSERT INTO `sale` (`receipt_no`, `customer_id`, `stock_no`, `staff_id`, `date`) 
-VALUES (NULL, '$customer_id', '$stock_no', '$staff_id', CURRENT_TIMESTAMP);";
+    include('connect.php');
 
 
-$result = mysqli_query($con, $query);
-
-  if ($result) {
-    $success = "You have successfully created a sale";
-  } else {
-    $error = "Could not create sale; check that customer_id, staff_id and stock_no are correct.";
-  }
+    $query = "INSERT INTO `sale` (`receipt_no`, `customer_id`, `stock_no`, `staff_id`, `date`) 
+    VALUES (NULL, '$customer_id', '$stock_no', '$staff_id', CURRENT_TIMESTAMP);";
 
 
+    $result = mysqli_query($con, $query);
 
-$query2 = "UPDATE `car` SET `availability` = 'SOLD' WHERE `car`.`stock_no` = $stock_no;";
+        if ($result) {
+            $query2 = "UPDATE `car` SET `availability` = 'SOLD' WHERE `car`.`stock_no` = $stock_no;";
+
+            $result2 = mysqli_query($con, $query2);
+
+            $success = "You have successfully created a sale";
+
+        } else {
+            $error = "Could not create sale; check that customer_id, staff_id and stock_no are correct.";
+        }
 
 
-$result2 = mysqli_query($con, $query2);
-
-  if ($result2) {
-    $success = "Car now SOLD";
-  } else {
-    $error = "Could availability not changed";
-  }
-
-
-
-}
+    }
 
 
 

@@ -22,25 +22,20 @@ if ($_POST) {
   
 
 
-include('connect.php');
+  include('connect.php');
 
-// INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) 
-VALUES (NULL, 'Active', 'Sally', 'Smith', 'smiths@wca.com.au', '0409456289', 'smiths', MD5('smiths'), 'Admin');
+  // INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) VALUES (NULL, 'Active', 'Sally', 'Smith', 'smiths@wca.com.au', '0409456289', 'smiths', MD5('smiths'), 'Admin');
 
-$query = "INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) 
-VALUES (NULL, '$status', '$firstname', '$surname', '$email', '$phone_no', '$username', MD5('$password'), '$security_lev');";
+  $query = "INSERT INTO `staff` (`staff_id`, `status`, `firstname`, `surname`, `email`, `phone_no`, `username`, `password`, `security_lev`) VALUES (NULL, '$status', '$firstname', '$surname', '$email', '$phone_no', '$username', MD5('$password'), '$security_lev');";
 
 
 
-$result = mysqli_query($con, $query);
+  $result = mysqli_query($con, $query);
 
 
   if ($result) {
 
     $success = "You have successfully added " . $firstname . " " . $surname . " to the database!";
-
-
-
   } 
 }
 
